@@ -16,7 +16,7 @@ function App() {
       <Inicio />
       <Cursos />
       <Eventos />
-      <Usuario />
+      
       
     </div>
   )

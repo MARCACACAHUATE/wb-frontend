@@ -2,7 +2,7 @@ import React from 'react'
 import './Eventos.css'
 const data =[ 
   {id : 1,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 2,  imageUrl:'',  decoration: 'hfjsdfjhf', includes :['k','p','l']},
+  {id : 2,  imageUrl:'',  decoration: '', includes : [] },
   {id : 3,  imageUrl:'',  decoration: '', includes : [] },
   {id : 4,  imageUrl:'',  decoration: '', includes : [] },
   {id : 5,  imageUrl:'',  decoration: '', includes : [] },

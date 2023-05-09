@@ -31,6 +31,7 @@ const Navbar = () => {
     {
         id:1,
         link: "Inicio",
+        
     },
     {
         id:2,

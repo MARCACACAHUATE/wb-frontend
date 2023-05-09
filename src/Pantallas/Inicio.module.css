@@ -6,13 +6,42 @@
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     color: #504d4d;
     padding: 20px 20px 200px;
+    text-align: center;
+}
+.titleContainer {
+    padding-top: 20px;
     
 }
-
 .inicio p{
+    font-size: 1em;
+    font-weight:500;
     color: #504d4d;
 }
 
 .callToAction{
+    background-color: white;
+    padding: 10px;
+    border-radius:30px;
+    transition: 0.5s;
+    
+}
+
+.callToAction:hover{
+    padding: 15px;
+    cursor:pointer;
+    
+}
+
+.ctaContainer{
+    padding-top: 40px;
+}
+
+.titleContainer2 {
+    padding-top: 20px;
+    padding-right: 20px;
+    
+}
+.ctaContainer2{
+    padding-top: 40px;
     
 }

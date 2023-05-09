@@ -1,17 +1,27 @@
 import React from 'react'
+import './Eventos.css'
 const data =[ 
-  {id : 1,  imageUrl:'',  decoration: '', includes : '' },
-  {id : 2,  imageUrl:'',  decoration: '', includes : '' }
+  {id : 1,  imageUrl:'',  decoration: '', includes : [] },
+  {id : 2,  imageUrl:'',  decoration: 'hfjsdfjhf', includes :['k','p','l']},
+  {id : 3,  imageUrl:'',  decoration: '', includes : [] },
+  {id : 4,  imageUrl:'',  decoration: '', includes : [] },
+  {id : 5,  imageUrl:'',  decoration: '', includes : [] },
+  {id : 6,  imageUrl:'',  decoration: '', includes : [] },
 ]
 const ButtonsE =({paquete})=>{
  return  (
   <section className="botonesE">
-    <ul>
-      <img src={paquete.imageUrl} alt={paquete.decoration} />
-      <li><b> Decoración:</b> {paquete.decoration}</li>
-      <li><b>Incluye: </b> {paquete.includes}</li>
+    <ul className='list'>
+      <img src={paquete.imageUrl} alt={paquete.decoration} width={100} />
+      <li className='deco'><b> Decoración:</b> {paquete.decoration}</li>
+      <li className='include'><b>Incluye: </b> <ul>
+            {paquete.includes.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul> </li>
+      <li className='buttonNext'><button>click</button></li>
     </ul>
-    <button>click</button>
+    
   </section>
  )
 };

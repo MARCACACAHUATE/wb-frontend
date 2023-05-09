@@ -1,0 +1,26 @@
+
+.list{
+    list-style : none;
+    margin-left: none;
+    text-align: left;
+
+    
+}
+
+.botonesE{
+border: 1px solid black;
+width: 300px;
+margin: none;
+float: left;
+margin-left: 50px; ;
+margin-bottom: 30px;
+justify-content: center;
+}
+
+.buttonNext{
+    text-align: center;
+    
+}
+img{
+    margin: auto;
+}

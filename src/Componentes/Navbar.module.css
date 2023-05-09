@@ -1,0 +1,114 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+  
+}
+
+.NavOpen{
+    display:flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(246, 209, 255);
+    flex-direction: column;
+    align-items:center;
+    
+}
+
+.navLink {
+    display: flex;
+    font-size: 2em;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    padding-top:90px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navLink:hover{
+    cursor: pointer;
+}
+
+/*.border{
+    display: flex;
+    height: 1px;
+    animation-name:animacionborde;
+    animation-duration: 1s;
+    background-color: rgb(241, 156, 224);
+}*/
+
+@keyframes animacionborder {
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 1px;
+    }
+    
+}
+.logo{
+    display: flex;
+    color: rgb(218, 8, 8);
+    font-weight: 800;
+   
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+@media (min-width:800px){
+    .logo{
+        font-size: 1.5em;
+    }
+    .Navbar{
+        align-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 50px;
+        font-family: 'Nunito', sans-serif;
+    }
+    .linksContainer{
+        display:flex;
+        width: 50%;
+        flex-direction:row;
+        justify-content:space-evenly;
+    }
+    .navLink{
+       
+        display: flex;
+        font-size: 2em;
+        font-weight: 600;
+        padding-top: 4px;
+        font-size:1.4em;
+        transition: 0.5s
+    }
+    .navLink:hover{
+        font-size: 1.5em;
+    }
+    .navOnScroll{
+        height: 50px;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(249, 111, 221);
+    }
+}
+
+.navOnScroll{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(249, 111, 221);
+}
+
+.usuarioLink{
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding: 3px;
+    background-color: rgb(148, 44, 127);
+    border-radius: 4px;
+    
+}

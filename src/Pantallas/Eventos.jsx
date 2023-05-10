@@ -2,11 +2,7 @@ import React from 'react'
 import './Eventos.css'
 const data =[ 
   {id : 1,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 2,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 3,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 4,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 5,  imageUrl:'',  decoration: '', includes : [] },
-  {id : 6,  imageUrl:'',  decoration: '', includes : [] },
+  
 ]
 const ButtonsE =({paquete})=>{
  return  (
@@ -26,12 +22,17 @@ const ButtonsE =({paquete})=>{
  )
 };
 const Eventos = () => {
+ 
   return (
+    <>
+    <h1 className='titulo'>Eventos/Servicios</h1>
     <ul>
     {data.map(paquete =>(<ButtonsE key ={paquete.id} paquete ={paquete}/> )
     )}
     </ul>
+    </>
     );
+    
 };
 
 

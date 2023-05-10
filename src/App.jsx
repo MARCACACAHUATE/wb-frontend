@@ -4,7 +4,6 @@ import reactLogo from './assets/react.svg'
 import Inicio from "./Pantallas/Inicio"
 import Cursos from "./Pantallas/Cursos"
 import Eventos from "./Pantallas/Eventos"
-
 import Navbar from "./Componentes/Navbar"
 
 function App() {

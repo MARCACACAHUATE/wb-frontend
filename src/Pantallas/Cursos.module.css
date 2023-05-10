@@ -19,16 +19,24 @@
     font-weight:500;
     color: #504d4d;
     
+    
 }
 ul{
-    text-align: left;
+    
     padding-left: 100px;
-   list-style: circle;
+    list-style-type: disc;
+   
    line-height: 2;
+   text-align: center;
 }
 h2{
-    text-align: left;
+    text-align: center;
     color:#fc2ecc;
     font-size: 1.3em;
     padding-left: 20px;
+    
 }
+
+
+
+

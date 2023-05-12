@@ -1,0 +1,26 @@
+/*Slider*/
+.item{
+    height: 20rem;
+    max-width: 80 rem;
+    padding: 1rem;
+    
+}
+
+.item img{
+    height: 100%;
+    width: 105%;
+    pointer-events: none;
+}
+
+
+.slider-container{
+    margin: 0 auto;
+    overflow-x: hidden;
+    
+   
+}
+
+.slider{
+    display: flex;
+    cursor:  grab;
+}

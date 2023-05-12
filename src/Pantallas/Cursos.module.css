@@ -1,0 +1,42 @@
+.cursos{
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    color: #504d4d;
+    padding: 20px 20px 200px;
+    text-align: center;
+}
+
+.titleContainer {
+    padding-top: 20px;
+    font-size: 1.5em;
+}
+
+.cursos p{
+    font-size: 1em;
+    font-weight:500;
+    color: #504d4d;
+    
+    
+}
+ul{
+    
+    padding-left: 100px;
+    list-style-type: disc;
+   
+   line-height: 2;
+   text-align: center;
+}
+h2{
+    text-align: center;
+    color:#fc2ecc;
+    font-size: 1.3em;
+    padding-left: 20px;
+    
+}
+
+
+
+

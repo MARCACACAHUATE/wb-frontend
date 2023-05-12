@@ -32,13 +32,13 @@
     cursor: pointer;
 }
 
-/*.border{
+.border{
     display: flex;
     height: 1px;
     animation-name:animacionborde;
     animation-duration: 1s;
     background-color: rgb(241, 156, 224);
-}*/
+}
 
 @keyframes animacionborder {
     0%{
@@ -91,7 +91,7 @@
         align-content: center;
         justify-content: space-between;
         align-items: center;
-        background-color: rgb(249, 111, 221);
+        background-color: rgb(253, 222, 247);
     }
 }
 
@@ -99,7 +99,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(249, 111, 221);
+    background-color: rgb(255, 255, 255);
 }
 
 .usuarioLink{

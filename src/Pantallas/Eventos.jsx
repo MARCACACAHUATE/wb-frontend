@@ -1,7 +1,13 @@
 import React from 'react'
 import './Eventos.css'
+
+
+
+
 const data =[ 
-  {id : 1,  imageUrl:'',  decoration: '', includes : [] },
+  {id : 1,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] },
+  {id : 2,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] }
+
   
 ]
 const ButtonsE =({paquete})=>{
@@ -35,6 +41,7 @@ const Eventos = () => {
     
 };
 
-
-
 export default Eventos
+
+
+

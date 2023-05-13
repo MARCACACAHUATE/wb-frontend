@@ -21,13 +21,12 @@
     
     
 }
-ul{
+.cursos .list-Tecnicas{
     
     padding-left: 100px;
-    list-style-type: disc;
-   
-   line-height: 2;
-   text-align: center;
+    list-style-type: disc;   
+    line-height: 2;
+    text-align: center;
 }
 h2{
     text-align: center;

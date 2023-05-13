@@ -19,8 +19,9 @@ const Cursos = () => {
       </motion.div>
         
       </motion.div>
-      
-        <ul className='lC'>
+      </div>
+      <div className='list-Tecnicas'>
+        <ul >
           <li>Burbujas con pintura</li>
           <li>Confetti</li>
           <li>Microperlas</li>

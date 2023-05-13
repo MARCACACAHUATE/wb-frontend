@@ -1,32 +1,9 @@
 import React from 'react'
 import './Eventos.css'
+import ButtonsE from "./BotonesEventos.jsx"
+import data from "./DatosEventos.js"
 
 
-
-
-const data =[ 
-  {id : 1,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] },
-  {id : 2,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] }
-
-  
-]
-const ButtonsE =({paquete})=>{
- return  (
-  <section className="botonesE">
-    <ul className='list'>
-      <img src={paquete.imageUrl} alt={paquete.decoration} width={100} />
-      <li className='deco'><b> Decoración:</b> {paquete.decoration}</li>
-      <li className='include'><b>Incluye: </b> <ul>
-            {paquete.includes.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul> </li>
-      <li className='buttonNext'><button>click</button></li>
-    </ul>
-    
-  </section>
- )
-};
 const Eventos = () => {
  
   return (
@@ -42,6 +19,8 @@ const Eventos = () => {
 };
 
 export default Eventos
+
+
 
 
 

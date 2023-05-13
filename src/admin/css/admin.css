@@ -1,0 +1,28 @@
+.buttonadmin{
+    background-color: whitesmoke !important;
+    text-decoration: none;
+}
+
+.adminheader{
+    margin-left: 40px;
+}
+.adminheader h4{
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    margin-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 7px;
+    padding-top: 5px;
+    border-radius: 45px;
+}
+
+.adminrow{
+    padding-top: 15px !important;
+}
+
+.rowactions{
+    margin: auto;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}

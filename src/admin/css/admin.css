@@ -18,6 +18,15 @@
 
 .adminrow{
     padding-top: 15px !important;
+    font-size: 18px;
+}
+.admincol{
+    padding-top: 15px !important;
+    font-size: 18px;
+}
+.fondotabla{
+    background-color: #cef6d7;
+    border-radius: 40px;
 }
 
 .rowactions{

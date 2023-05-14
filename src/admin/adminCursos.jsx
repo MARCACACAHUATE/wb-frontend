@@ -46,25 +46,25 @@ const adminCursos = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-12 fondotabla">
               <div className="">
                 <div className="table-responsive">
                   <table className="table project-list-table table-nowrap align-middle table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col" style={{ width: "200px" }}>
+                        <th scope="col" className="admincol" style={{ width: "200px" }}>
                           Acciones
                         </th>
-                        <th scope="col">Curso</th>
-                        <th scope="col">Temática</th>
-                        <th scope="col">Detalles</th>
-                        <th scope="col">Fecha Inicio</th>
-                        <th scope="col">Fecha Fin</th>
-                        <th scope="col">Costo Reservación</th>
-                        <th scope="col">Costo Total</th>
-                        <th scope="col">Calle</th>
-                        <th scope="col">Número</th>
-                        <th scope="col">Municipio</th>
+                        <th scope="col" className="admincol">Curso</th>
+                        <th scope="col" className="admincol">Temática</th>
+                        <th scope="col" className="admincol">Detalles</th>
+                        <th scope="col" className="admincol">Fecha Inicio</th>
+                        <th scope="col" className="admincol">Fecha Fin</th>
+                        <th scope="col" className="admincol">Costo Reservación</th>
+                        <th scope="col" className="admincol">Costo Total</th>
+                        <th scope="col" className="admincol">Calle</th>
+                        <th scope="col" className="admincol">Número</th>
+                        <th scope="col" className="admincol">Municipio</th>
                       </tr>
                     </thead>
                     <tbody>

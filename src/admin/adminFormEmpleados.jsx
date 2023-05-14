@@ -2,7 +2,7 @@ import React from 'react'
 
 const adminFormCursos = () => {
   return (
-    <div>adminFormcursos</div>
+    <div>adminFormcEmpleados</div>
   )
 }
 export default adminFormCursos

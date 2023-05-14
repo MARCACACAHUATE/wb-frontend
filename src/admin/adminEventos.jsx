@@ -21,15 +21,15 @@ const adminEventos = () => {
             </div>
             <div className="col-md-6">
               <div className="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                <form class="form-inline my-2 my-lg-0">
+                <form className="form-inline my-2 my-lg-0">
                   <input
-                    class="form-control mr-sm-2"
+                    className="form-control mr-sm-2"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
                   <button
-                    class="btn btn-outline-dark my-2 my-sm-0"
+                    className="btn btn-outline-dark my-2 my-sm-0"
                     type="submit"
                   >
                     Search
@@ -70,13 +70,13 @@ const adminEventos = () => {
                     <tbody>
                       <tr>
                         <td className="rowactions">
-                          <button type="button" class="btn btn-info">
+                          <button type="button" className="btn btn-info">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class="bi bi-pencil"
+                              className="bi bi-pencil"
                               viewBox="0 0 16 16"
                             >
                               {" "}
@@ -84,13 +84,13 @@ const adminEventos = () => {
                               {" "}
                             </svg>
                           </button>
-                          <button type="button" class="btn btn-danger">
+                          <button type="button" className="btn btn-danger">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class="bi bi-trash"
+                              className="bi bi-trash"
                               viewBox="0 0 16 16"
                             >
                               {" "}

@@ -11,6 +11,7 @@ import Admin from "./admin/adminHome";
 import AdminCursos from "./admin/adminCursos";
 import AdminEmpleados from "./admin/adminEmpleados";
 import AdminEventos from "./admin/adminEventos";
+import AdminEventosSeparaciones from "./admin/adminEventosSeparaciones";
 import AdminFormCursos from "./admin/adminFormCursos";
 import AdminFormEmpleados from "./admin/adminFormEmpleados";
 import AdminFormEventos from "./admin/adminFormEventos";
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/Admin/adminCursos" element={<AdminCursos/>}/>
         <Route exact path="/Admin/adminEmpleados" element={<AdminEmpleados/>}/>
         <Route exact path="/Admin/adminEventos" element={<AdminEventos/>}/>
+        <Route exact path="/Admin/adminEventosSeparaciones" element={<AdminEventosSeparaciones/>}/>
         <Route exact path="/Admin/adminFormCursos" element={<AdminFormCursos/>}/>
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>

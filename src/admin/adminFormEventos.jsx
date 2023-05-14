@@ -20,25 +20,25 @@ const adminFormCursos = () => {
                 <div className="form-group form-cont form-cont">
                   <label className="control-label col-sm-6 label" for="fname">Nombre del paquete:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre del paquete" name="fname"/>
+                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre del paquete" name="fname" required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="lname">Ocasión:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la ocasion" name="lname"/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la ocasion" name="lname" required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="email">Servicios:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="email" placeholder="Ingresa los servicios " name="email"/>
+                  <input type="text" className="form-control" id="email" placeholder="Ingresa los servicios " name="email" required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Mobiliario:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el mobiliario" name="lname"/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el mobiliario" name="lname" required/>
                   
                   </div>
                 </div>
@@ -55,13 +55,13 @@ const adminFormCursos = () => {
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Costo de envio:</label>
                   <div className="col-sm-10">
-                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de envio" name="lname"/>
+                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de envio" name="lname" required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Costo de reservación:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el costo de reservacion" name="lname"/>
+                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de reservacion" name="lname" required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">

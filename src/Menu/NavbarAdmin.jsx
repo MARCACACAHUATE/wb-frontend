@@ -23,7 +23,8 @@ const Navbar =()=>{
           <h4><NavLink to="/Admin" className="nav-item nav-link" style={{color: "dark"}}>Inicio</NavLink></h4>
           <h4><NavLink to="/Admin/adminCursos" className="nav-item nav-link" style={{color: "dark"}}>Cursos</NavLink></h4>
           <h4><NavLink to="/Admin/adminEventos" className="nav-item nav-link" style={{color: "dark"}}>Eventos</NavLink></h4>
-          <h4><NavLink to="/Admin/adminEmpleados" className="nav-item nav-link" style={{color: "dark"}}>Empleados</NavLink></h4>
+          <h4><NavLink to="/Admin/adminEventosSeparaciones" className="nav-item nav-link" style={{color: "dark"}}>Separaciones</NavLink></h4>
+          <h4><NavLink to="/Admin/adminEmpleados" className="nav-item nav-link" style={{color: "dark"}}>Usuarios</NavLink></h4>
           <h4><NavLink to="/" className="nav-item nav-link" style={{color: "dark"}}>Cerrar Sesión</NavLink></h4>
 
           </div>

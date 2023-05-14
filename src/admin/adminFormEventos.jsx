@@ -65,6 +65,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
+                <label className="control-label col-sm-6 label" for="comment">Estado:</label>
                   <div className="col-sm-10">
                   <select className='form-control'>
                     <option value="Option 1">Nuevo Leon</option>

@@ -24,7 +24,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="lname">Ocasion:</label>
+                  <label className="control-label col-sm-6 label" for="lname">Ocasión:</label>
                   <div className="col-sm-10">          
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa la ocasion" name="lname"/>
                   </div>
@@ -59,7 +59,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Costo de reservacion:</label>
+                  <label className="control-label col-sm-6 label" for="comment">Costo de reservación:</label>
                   <div className="col-sm-10">
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa el costo de reservacion" name="lname"/>
                   </div>
@@ -68,7 +68,7 @@ const adminFormCursos = () => {
                 <label className="control-label col-sm-6 label" for="comment">Estado:</label>
                   <div className="col-sm-10">
                   <select className='form-control'>
-                    <option value="Option 1">Nuevo Leon</option>
+                    <option value="Option 1">Nuevo León</option>
                     <option value="Option 2">Coahuila</option>
                     <option value="Option 3">Tamaulipas</option>
                   </select>
@@ -79,7 +79,7 @@ const adminFormCursos = () => {
                   <div className="col-sm-10">
                   <select className='form-control'>
                     <option value="Option 1">Monterrey</option>
-                    <option value="Option 2">San Nicolas</option>
+                    <option value="Option 2">San Nicolás</option>
                     <option value="Option 3">Guadalupe</option>
                   </select>
                   </div>

@@ -25,14 +25,14 @@ const adminEventos = () => {
                   <input
                     className="form-control mr-sm-2"
                     type="search"
-                    placeholder="Search"
+                    placeholder="Buscar"
                     aria-label="Search"
                   />
                   <button
                     className="btn btn-outline-dark my-2 my-sm-0"
                     type="submit"
                   >
-                    Search
+                    Buscar
                   </button>
                 </form>
                 <div>
@@ -56,7 +56,7 @@ const adminEventos = () => {
                           Acciones
                         </th>
                         <th scope="col" className="admincol">Paquete</th>
-                        <th scope="col" className="admincol">Ocasion</th>
+                        <th scope="col" className="admincol">Ocasión</th>
                         <th scope="col" className="admincol">Servicios</th>
                         <th scope="col" className="admincol">Mobiliario</th>
                         <th scope="col" className="admincol">Color-Globos</th>

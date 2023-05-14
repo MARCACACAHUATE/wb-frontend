@@ -36,6 +36,12 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
+                  <label className="control-label col-sm-6 label" for="email">Cupo Máximo:</label>
+                  <div className="col-sm-10">
+                  <input type="text" className="form-control" id="email" placeholder="Ingresa una cantidad de personas" name="email"/>
+                  </div>
+                </div>
+                <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Fecha inicio:</label>
                   <div className="col-sm-10">
                   <input type="date" className="form-control" id="lname" name="lname"/>

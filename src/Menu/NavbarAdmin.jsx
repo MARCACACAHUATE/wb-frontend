@@ -12,7 +12,7 @@ const Navbar =()=>{
           <img src={logo} height="60" alt="" />
         </NavLink>
         <div className="adminheader">
-          <h4>Admin</h4>
+          <h4>Administrador</h4>
         </div>
         <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span className="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@ const Navbar =()=>{
           <h4><NavLink to="/Admin/adminCursos" className="nav-item nav-link" style={{color: "dark"}}>Cursos</NavLink></h4>
           <h4><NavLink to="/Admin/adminEventos" className="nav-item nav-link" style={{color: "dark"}}>Eventos</NavLink></h4>
           <h4><NavLink to="/Admin/adminEmpleados" className="nav-item nav-link" style={{color: "dark"}}>Empleados</NavLink></h4>
-          <h4><NavLink to="/" className="nav-item nav-link" style={{color: "dark"}}>Cerrar Sesion</NavLink></h4>
+          <h4><NavLink to="/" className="nav-item nav-link" style={{color: "dark"}}>Cerrar Sesión</NavLink></h4>
 
           </div>
         </div>

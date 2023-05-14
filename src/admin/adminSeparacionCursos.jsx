@@ -58,6 +58,7 @@ const adminSeparacionCursos = () => {
                                                 <th scope="col" className="admincol">Teléfono</th>
                                                 <th scope="col" className="admincol">Email</th>
                                                 <th scope="col" className="admincol">Cantidad de Personas</th>
+                                                <th scope="col" className="admincol">Estatus de Pago</th>
 
                                             </tr>
                                         </thead>
@@ -69,6 +70,7 @@ const adminSeparacionCursos = () => {
                                                 <td className="adminrow">Tostiboy@gmail.com</td>
                                                 <td className="adminrow">Tostiboy12</td>
                                                 <td className="adminrow">8</td>
+                                                <td className="adminrow">No pagado</td>
                                             </tr>
                                         </tbody>
                                     </table>

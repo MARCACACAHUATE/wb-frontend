@@ -25,14 +25,14 @@ const adminEmpleados = () => {
                   <input
                     class="form-control mr-sm-2"
                     type="search"
-                    placeholder="Search"
+                    placeholder="Buscar"
                     aria-label="Search"
                   />
                   <button
                     class="btn btn-outline-dark my-2 my-sm-0"
                     type="submit"
                   >
-                    Search
+                    Buscar
                   </button>
                 </form>
                 <div>

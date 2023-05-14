@@ -16,6 +16,15 @@ const adminFormCursos = () => {
               </div>
             </div>
             <div className="col-md-9">
+              <div className="form-group form-cont">
+                  <label className="control-label col-sm-6 label" for="comment">Tipo de Usuario:</label>
+                  <div className="col-sm-10">
+                  <select className='form-control'>
+                    <option value="Option 1">Administrador</option>
+                    <option value="Option 2">Empleado</option>
+                  </select>
+                  </div>
+                </div>
               <div className="contact-form">
                 <div className="form-group form-cont form-cont">
                   <label className="control-label col-sm-6 label" for="fname">Primer Nombre:</label>
@@ -42,7 +51,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Telefono:</label>
+                  <label className="control-label col-sm-6 label" for="comment">Teléfono:</label>
                   <div className="col-sm-10">
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa el telefono" name="lname"/>
                   </div>
@@ -64,7 +73,7 @@ const adminFormCursos = () => {
                   <div className="col-sm-10">
                   <select className='form-control'>
                     <option value="Option 1">Monterrey</option>
-                    <option value="Option 2">San Nicolas</option>
+                    <option value="Option 2">San Nicolás</option>
                     <option value="Option 3">Guadalupe</option>
                   </select>
                   </div>

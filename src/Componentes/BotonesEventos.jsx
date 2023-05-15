@@ -1,5 +1,5 @@
 import React from 'react';
-import './Eventos.css'
+import { Link } from 'react-router-dom';
 
 
 const ButtonsE =({paquete})=>{
@@ -13,9 +13,13 @@ const ButtonsE =({paquete})=>{
                  <li key={index}>{item}</li>
                ))}
              </ul> </li>
-         <li className='buttonNext' ><button className='customButton'>Agregar al carrito</button></li>
+         <li > 
+         <div className='customButton'>
+          <Link  key={paquete.decoration} to= {`/Eventos/${paquete.decoration}`}>{'Siguiente'}</Link> 
+          </div>
+          </li>
        </ul>
-       
+      
      </section>
     )
    };

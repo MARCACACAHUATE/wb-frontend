@@ -1,6 +1,6 @@
 import React from 'react'
 import './Eventos.css'
-import ButtonsE from "./BotonesEventos.jsx"
+import ButtonsE from "../Componentes/BotonesEventos.jsx"
 import data from "./DatosEventos.js"
 
 

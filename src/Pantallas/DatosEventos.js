@@ -1,7 +1,7 @@
 const data =[ 
-    {id : 1,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] },
-    {id : 2,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] },
-    {id : 2,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] }
+    {id : 1,  imageUrl:'',  decoration: 'Hola', includes : ['hsgd','hhghdgf'] },
+    {id : 2,  imageUrl:'',  decoration: 'Adios', includes : ['hsgd','hdgf'] },
+    {id : 3,  imageUrl:'',  decoration: 'gfdgfh', includes : ['hsgd','hhghdgf'] }
   
     
   ]

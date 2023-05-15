@@ -1,21 +1,35 @@
 
+import  Navbar from "./Menu/Navbar";
+import Inicio from "./Pantallas/Inicio";
+import Cursos from "./Pantallas/Cursos";
+import Eventos from "./Pantallas/Eventos";
+import Usuario from "./Pantallas/Usuario";
+import Slider1 from "./Pantallas/Slider1";
+import ListaPer from './Pantallas/PersonalizarE';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Inicio from "./Pantallas/Inicio"
-import Cursos from "./Pantallas/Cursos"
-import Eventos from "./Pantallas/Eventos"
-import Navbar from "./Componentes/Navbar"
-import ListaPer from './Pantallas/PersonalizarE'
+
+
 
 function App() {
-  
-
   return (
     <div className="App">
-      <Navbar />
-      <Inicio />
-      <Cursos />
-      <Eventos />
-      <ListaPer />
+      <BrowserRouter>
+      <Navbar/>
+      
+       <Routes>
+        <Route exact path="/" element={<Inicio/>}/>
+        <Route exact path="/Inicio" element={<Inicio/>}/>
+        <Route exact path="/Cursos" element={<Cursos/>}/>
+        <Route  exact path="/Eventos/"element={<Eventos/>}/>        
+        <Route  exact path="/Eventos/:decoracion"element={<ListaPer/>}/>    
+        <Route exact path="/Usuario" element={<Usuario/>}/>
+        <Route exact path="/Slider1" element={<Slider1/>}/>
+        
+       </Routes>
+      </BrowserRouter>
+    
     </div>
   )
 }

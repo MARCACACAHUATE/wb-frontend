@@ -10,8 +10,16 @@
     padding: 20px 20px 200px;
     text-align: center;
 }
+.principal{
+    display: flex;
+}
+
+.slider{
+    display: flex;
+}
 .titleContainer {
     padding-top: 20px;
+   
     
 }
 .inicio p{
@@ -21,11 +29,15 @@
 }
 
 
+
+
 .callToAction{
     background-color: white;
     padding: 10px;
     border-radius:30px;
     transition: 0.5s;
+    color: black;
+    text-decoration: none;
     
 }
 
@@ -33,10 +45,12 @@
     padding: 15px;
     cursor:pointer;
     
+    
 }
 
 .ctaContainer{
     padding-top: 40px;
+    
 }
 
 .titleContainer2 {
@@ -48,3 +62,11 @@
     padding-top: 40px;
     
 }
+
+.container{
+    display:inline-flexbox;
+}
+
+.carousel, .carousel-inner > .item > img {
+    height: 70px;
+  }

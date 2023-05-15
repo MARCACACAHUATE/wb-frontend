@@ -3,22 +3,12 @@ import styles from './Cursos.module.css';
 import './slider.css'
 import images from '../Hooks/images'; 
 import {motion} from 'framer-motion'
-import { Link } from 'react-scroll';
-import { NavLink } from 'react-router-dom';
-
 
 const Cursos = () => {
   return (
     <div className={styles.cursos}>
       <div className={styles.titleContainer}>
       <h1>Contenido del curso</h1>
-
-      <nav>
-        <NavLink to="/Cursos" >Cursos</NavLink>&nbsp;
-        <NavLink to="/" >Calendario</NavLink>&nbsp;
-        <NavLink to="/Inscripción" >Incripciones</NavLink>
-      </nav>
-
       <motion.div className='slider-container'>
       <motion.div className='slider' drag= 'x' dragConstraints ={{right: 0, left:10}} >
       {images.map(image => (

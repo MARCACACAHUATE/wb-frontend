@@ -21,9 +21,9 @@ const Cursos = () => {
       </div>
       <nav className={styles.submenu}>
         <NavLink to="/Calendario"smooth
-                    duration={500} className={styles.callToAction} >Calendario</NavLink>&nbsp;
+                    duration={500} className={styles.callToAction} >Fechas disponibles</NavLink>&nbsp;
         <NavLink to="/Inscripción" smooth
-                    duration={500} className={styles.callToAction}>Incripciones</NavLink>
+                    duration={500} className={styles.callToAction}>Inscripciones</NavLink>
       </nav>
       </div>
       <div id={styles.cont1}>
@@ -35,21 +35,21 @@ const Cursos = () => {
         <img src={c1} alt="" className={styles.imagen} />
         <img src={c2} alt="" className={styles.imagen} />
         <img src={c3} alt="" className={styles.imagen} />
-        <h3>¿Qué aprenderás?</h3>
+        <h3 className={styles.resaltar}>¿Qué aprenderás?</h3>
         <div className={styles.lista}>
         
         <ul> 
-          <li>Armado de Estructuras con poca inversión</li>
-          <li>Enlonado y fundas para estructuras</li>
-          <li>Montaje de Arcos de entrada</li>
-          <li>Esenario de Bienvenida con doble vista</li>
-          <li>Montaje de esenario principal</li>
-          <li>Candy bar</li>
-          <li>Centro de mesa</li>
-          <li>Montaje de mesa para invitados</li>
-          <li>Implementación de luz led a estructuras</li>
-          <li>Aplicación de vinil en el coroplast</li>
-          <li>Redes sociales y cotizaciones justas</li>
+          <li className={styles.tabla}>Armado de Estructuras con poca inversión</li>
+          <li className={styles.tabla}>Enlonado y fundas para estructuras</li>
+          <li className={styles.tabla}>Montaje de Arcos de entrada</li>
+          <li className={styles.tabla}>Esenario de Bienvenida con doble vista</li>
+          <li className={styles.tabla}>Montaje de esenario principal</li>
+          <li className={styles.tabla}>Candy bar</li>
+          <li className={styles.tabla}>Centro de mesa</li>
+          <li className={styles.tabla}>Montaje de mesa para invitados</li>
+          <li className={styles.tabla}>Implementación de luz led a estructuras</li>
+          <li className={styles.tabla}>Aplicación de vinil en el coroplast</li>
+          <li className={styles.tabla}>Redes sociales y cotizaciones justas</li>
         </ul>
         
         </div>

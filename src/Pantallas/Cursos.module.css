@@ -50,7 +50,7 @@ ul{
 
 }
 
-li{
+.tabla{
     margin:8px;
     background-color: #e3a8f8;
     border-radius: 10px;
@@ -130,4 +130,9 @@ p{
     height: 350px;
     margin: 10px;
     border-radius: 20px;
+}
+.resaltar{
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px;
 }

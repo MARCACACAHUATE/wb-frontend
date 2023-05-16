@@ -21,15 +21,15 @@ const adminSeparacionCursos = () => {
                         </div>
                         <div className="col-md-6">
                             <div className="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                                <form class="form-inline my-2 my-lg-0">
+                                <form className="form-inline my-2 my-lg-0">
                                     <input
-                                        class="form-control mr-sm-2"
+                                        className="form-control mr-sm-2"
                                         type="search"
                                         placeholder="Search"
                                         aria-label="Search"
                                     />
                                     <button
-                                        class="btn btn-outline-dark my-2 my-sm-0"
+                                        className="btn btn-outline-dark my-2 my-sm-0"
                                         type="submit"
                                     >
                                         Search

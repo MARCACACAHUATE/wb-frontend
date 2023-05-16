@@ -87,6 +87,7 @@ const adminEmpleados = () => {
                         <th scope="col" className="admincol">Calle</th>
                         <th scope="col" className="admincol">Número</th>
                         <th scope="col" className="admincol">Municipio</th>
+                        <th scope="col" className="admincol">Usuario</th>
                       </tr>
                     </thead>
                     <tbody>

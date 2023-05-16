@@ -26,9 +26,10 @@ const EventosSeparacionesRow = ({separacion}) => {
 
   const modifyEvento = async (separacion) => {
     // history.push('/Admin/adminFormEventos', { param: evento });
-    // navigate("/Admin/adminFormEventos", {
-    //     state: { separacion: separacion },
-    //   })
+    console.log(separacion);
+    navigate("/Admin/adminFormEventosSeparaciones", {
+        state: { separacion: separacion },
+      })
   };
 
   const fechaformat =(fechaOriginal) =>{

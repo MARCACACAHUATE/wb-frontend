@@ -73,7 +73,7 @@ const EventosRow = ({evento}) => {
     <td className="adminrow">${evento.costo_reservacion}</td>
     <td className="adminrow">${evento.costo_total}</td>
     <td className="adminrow">{evento.estado}</td>
-    <td className="adminrow">{evento.id_Municipio}</td>
+    <td className="adminrow">{evento.id_Municipio==="1"? "Monterrey" : "San Nicolás"}</td>
     </tr>
   );
 };

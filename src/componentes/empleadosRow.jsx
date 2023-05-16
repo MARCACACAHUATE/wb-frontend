@@ -25,8 +25,8 @@ const EmpleadosRow = ({empleado}) => {
 
   const modifyEvento = async (evento) => {
     // history.push('/Admin/adminFormEventos', { param: evento });
-    navigate("/Admin/adminFormEventos", {
-        state: { evento: evento },
+    navigate("/Admin/adminFormEmpleados", {
+        state: { empleado: empleado },
       })
   };
 
@@ -72,6 +72,9 @@ const EmpleadosRow = ({empleado}) => {
       <td className="adminrow">{empleado.calle}</td>
       <td className="adminrow">#{empleado.numero}</td>
       <td className="adminrow">{empleado.municipio}</td>
+      <td className="adminrow">{
+        empleado.id_TipoUser === 1?  "Administrador" : "Empleado"
+      }</td>
     </tr>
   );
 };

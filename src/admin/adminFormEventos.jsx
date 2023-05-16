@@ -146,6 +146,7 @@ const adminFormCursos = () => {
                   </select>
                   </div>
                 </div>
+                <input type="hidden" className="form-control" id="lname2" placeholder="Estado del Curso" name="lname2" {...register("Id")} defaultValue={"1"} required/>
                 <div className="form-group form-cont">        
                   <div className="col-sm-offset-2 col-sm-10">
                   <button type="submit" className="btn btn-default">

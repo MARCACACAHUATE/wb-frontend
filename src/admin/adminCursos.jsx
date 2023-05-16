@@ -21,15 +21,15 @@ const adminCursos = () => {
             </div>
             <div className="col-md-6">
               <div className="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                <form class="form-inline my-2 my-lg-0">
+                <form className="form-inline my-2 my-lg-0">
                   <input
-                    class="form-control mr-sm-2"
+                    className="form-control mr-sm-2"
                     type="search"
                     placeholder="Buscar"
                     aria-label="Search"
                   />
                   <button
-                    class="btn btn-outline-dark my-2 my-sm-0"
+                    className="btn btn-outline-dark my-2 my-sm-0"
                     type="submit"
                   >
                     Buscar
@@ -70,13 +70,13 @@ const adminCursos = () => {
                     <tbody>
                       <tr>
                         <td className="rowactionsCursos">
-                          <button type="button" class="btn btn-info">
+                          <button type="button" className="btn btn-info">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class="bi bi-pencil"
+                              className="bi bi-pencil"
                               viewBox="0 0 16 16"
                             >
                               {" "}
@@ -84,13 +84,13 @@ const adminCursos = () => {
                               {" "}
                             </svg>
                           </button>
-                          <button type="button" class="btn btn-danger">
+                          <button type="button" className="btn btn-danger">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="16"
                               height="16"
                               fill="currentColor"
-                              class="bi bi-trash"
+                              className="bi bi-trash"
                               viewBox="0 0 16 16"
                             >
                               {" "}
@@ -101,8 +101,8 @@ const adminCursos = () => {
                             </svg>
                           </button>
                           <NavLink to="/Admin/adminSeparacionCursos">
-                          <button type="button" class="btn btn-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                          <button type="button" className="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-file-text" viewBox="0 0 16 16">
                               <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
                               <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
                             </svg>

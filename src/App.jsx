@@ -6,6 +6,7 @@ import Cursos from "./Pantallas/Cursos";
 import Eventos from "./Pantallas/Eventos";
 import Usuario from "./Pantallas/Usuario";
 import Slider1 from "./Pantallas/Slider1";
+import ListaPer from './Pantallas/PersonalizarE';
 import Steps from "./Pantallas/Steps";
 
 import Admin from "./admin/adminHome";
@@ -41,10 +42,10 @@ function App() {
         <Route exact path="/Inicio" element={<Inicio/>}/>
         <Route exact path="/Cursos" element={<Cursos/>}/>
         <Route exact path="/Eventos" element={<Eventos/>}/>
-       
+        <Route exact path="/Usuario" element={<Usuario/>}/>
         <Route exact path="/Slider1" element={<Slider1/>}/>
         <Route exact path="/Inscripción" element={<Steps/>}/>
-
+        
         <Route exact path="/Admin" element={<Admin/>}/>
         <Route exact path="/Admin/adminCursos" element={<AdminCursos/>}/>
         <Route exact path="/Admin/adminEmpleados" element={<AdminEmpleados/>}/>
@@ -54,7 +55,7 @@ function App() {
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
-
+        
        </Routes>
       </BrowserRouter>
 

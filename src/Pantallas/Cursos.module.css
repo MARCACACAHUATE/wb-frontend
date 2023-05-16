@@ -32,12 +32,22 @@
     
     
 }
+
 ul{
    text-align: center;
    font-size: 25px;
    font-weight: 500;
   text-decoration: none;
   list-style-type: none;
+}
+
+.cursos .list-Tecnicas{
+    
+    padding-left: 100px;
+    list-style-type: disc;   
+    line-height: 2;
+    text-align: center;
+
 }
 
 li{

@@ -1,0 +1,89 @@
+.personalizar{
+    padding: 20px 20px 200px;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    color: #504d4d;
+    padding: 20px 20px 200px;
+    text-align:justify;
+    
+    
+}
+
+.containerP{
+    margin-top:30px ;
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+.buttonComp{
+    display:flex;
+    text-align: center;
+    width: 100px;
+    margin-left: 45%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    padding: 8px 16px;
+    background-color: rgb(241, 113, 241) ;
+    color: #ffffff;
+    border-radius: 25px;
+    text-decoration: none;
+    height: 45;
+    border-color: #504d4d00;
+    margin-bottom: 0%;
+}
+
+
+
+ 
+  .buttonComp:hover {
+    color: rgb(255, 255, 255);
+    height: 48px;
+
+  }
+.select{
+    
+    
+    text-align: center;
+    width: 380;
+
+}
+.tituloE{
+        text-align: center;
+}
+.perso{
+    width: 380px;
+
+    
+}
+h5{
+    
+    margin-bottom: 50px;
+}
+h6{
+margin-top: 100px;
+}
+.options{
+    width: 200;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 50px;
+    max-width: 400px;
+}
+.questions{
+    margin-top: 20px;
+}
+.titleP{
+    margin-bottom: 25px;
+}
+.inputGroup{
+    
+    background: white;
+    color: black;
+    width: 380px;
+    transition: .5s;
+    
+}

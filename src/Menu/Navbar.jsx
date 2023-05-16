@@ -21,6 +21,8 @@ const Navbar =()=>{
           <h4><NavLink to="/Cursos"  className="nav-item nav-link" style={{color: "dark"}}>Cursos</NavLink></h4>
           <h4><NavLink to="/Eventos" className="nav-item nav-link" style={{color: "dark"}}>Eventos</NavLink></h4>
           <h4><NavLink to="/Usuario" className="nav-item nav-link" style={{color: "dark"}}>Usuario</NavLink></h4>
+          <h4><NavLink to="/Admin" className="nav-item nav-link" style={{color: "dark"}}>Admin</NavLink></h4>
+
           
 
           </div>

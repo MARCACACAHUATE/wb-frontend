@@ -6,14 +6,16 @@ import "./PersonalizarEvento.css";
 
 const ListaPer = () => {
   return (
+  <>
     <div className="personalizar">
+    
   
-    <div className="container">
+    <div className="containerP">
     <div className="perso">
       <h5 className="titleP">Personaliza tu evento</h5>
      
       <h6 className="questions">¿Cuál es la ocasion de tu evento?</h6>
-        <Select className="options"
+        <Select className="optionsP"
           closeMenuOnScroll={false}
           components={makeAnimated}
           placeholder="Ocasion de tu evento"
@@ -30,7 +32,7 @@ const ListaPer = () => {
             
 
          <h6 className="questions">Selecciona el color de tus globos</h6>
-        <Select className="options"
+        <Select className="optionsP"
           closeMenuOnScroll={false}
           components={makeAnimated}
           placeholder="Colores de tus Globos"
@@ -49,8 +51,10 @@ const ListaPer = () => {
       </div>
       
     </div>
+    <button className="buttonComp">Comprar</button>
     </div>
+    
+    </>
   );
 };
-
-export default ListaPer;
+export default ListaPer

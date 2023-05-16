@@ -23,6 +23,9 @@ const adminFormCursos = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+
+    let total = parseInt(data.costoEnvioMaterial)+parseInt(data.costo_reservacion);
+    data.costo_total = total;
     if (state!=undefined) {
       ModifyEvento(data);
     }else{

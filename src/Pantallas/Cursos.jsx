@@ -6,50 +6,71 @@ import {motion} from 'framer-motion'
 import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 
+import c1 from '../img/cursof1.jpg'
+import c2 from '../img/cursof2.jpg'
+import c3 from '../img/cursog3.jpg'
+import c4 from '../img/curso3.jpg'
 
 const Cursos = () => {
   return (
     <div className={styles.cursos}>
+      <div className={styles.nav2}>
+
       <div className={styles.titleContainer}>
-      <h1>Contenido del curso</h1>
-
-      <nav>
-        <NavLink to="/Cursos" >Cursos</NavLink>&nbsp;
-        <NavLink to="/" >Calendario</NavLink>&nbsp;
-        <NavLink to="/Inscripción" >Incripciones</NavLink>
+      <h1 className={styles.titulo}>¡Da un vistazo a nuestra oferta de cursos! </h1>
+      </div>
+      <nav className={styles.submenu}>
+        <NavLink to="/Calendario"smooth
+                    duration={500} className={styles.callToAction} >Calendario</NavLink>&nbsp;
+        <NavLink to="/Inscripción" smooth
+                    duration={500} className={styles.callToAction}>Incripciones</NavLink>
       </nav>
-
-      <motion.div className='slider-container'>
-      <motion.div className='slider' drag= 'x' dragConstraints ={{right: 0, left:10}} >
-      {images.map(image => (
-          <motion.div className='item'>
-            <img src={image} alt=''/>
-          </motion.div>
-        ))}
-      </motion.div>
-        
-      </motion.div>
+      </div>
+      <div id={styles.cont1}>
       
-        <ul>
-          <li>Burbujas con pintura</li>
-          <li>Confetti</li>
-          <li>Microperlas</li>
-          <li>Englobado</li>
-          <li>Diamantina</li>
-          <li>Tasstelsen tendencia</li>
-          <li>Pompones</li>
-          <li>Globos con helio</li>
-          <li>Buquet</li>
+      <div id={styles.principal}>
+
+        <h2 className={styles.subtitulo}>Curso de globos, flores y follajes</h2>
+        <p>Nuestro curso de globos florales abarcan técnicas avanzadas para la construcción de figuras con globos, ideas creativas para decoraciones con globos, configuraciones básicas y avanzadas para arreglos florales con globos, guías paso a paso sobre cómo crear diferentes diseños y mucho más. Además, los alumnos recibirán asistencia personalizada por parte de nuestros instructores para ayudarlos a resolver cualquier duda o problema que puedan encontrar durante el curso. </p>
+        <img src={c1} alt="" className={styles.imagen} />
+        <img src={c2} alt="" className={styles.imagen} />
+        <img src={c3} alt="" className={styles.imagen} />
+        <h3>¿Qué aprenderás?</h3>
+        <div className={styles.lista}>
+        
+        <ul> 
+          <li>Armado de Estructuras con poca inversión</li>
+          <li>Enlonado y fundas para estructuras</li>
+          <li>Montaje de Arcos de entrada</li>
+          <li>Esenario de Bienvenida con doble vista</li>
+          <li>Montaje de esenario principal</li>
+          <li>Candy bar</li>
+          <li>Centro de mesa</li>
+          <li>Montaje de mesa para invitados</li>
+          <li>Implementación de luz led a estructuras</li>
+          <li>Aplicación de vinil en el coroplast</li>
+          <li>Redes sociales y cotizaciones justas</li>
         </ul>
-      <h2>¡Y más de 10 técnicas!</h2>
-    
-
-
+        
+        </div>
+        
+      </div>
+      
       </div>
 
+      <div id={styles.cont2}>
+      <div id={styles.secundario}>
 
+        <h2 className={styles.subtitulo}>Curso de burbujas con helio</h2>
+        <p>La decoración con burbujas de herlio es lo último en tendencia. Aquí aprenderás todo sobre el proceso de realización de las burbujas con Helio, así como su valoración en el mercado. </p>
+        <img src={c4} alt="" className={styles.imagen2} />
+        
+      </div>
+      </div>
       
     </div>
+
+    
   )
 }
 

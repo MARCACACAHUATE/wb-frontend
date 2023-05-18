@@ -5,7 +5,7 @@ import { multiStepContext } from "../StepContext";
 import './steps.css'
 
 
-const ThirdStep= () => {
+const ThirdStepE= () => {
     const { setStep, userData, setUserData, submitData} = useContext(multiStepContext);
     return(
     <div className="conteiner">
@@ -17,7 +17,7 @@ const ThirdStep= () => {
         </div>
         <div>
         <TextField label="CVV" margin="normal" value={userData['cvv']} onChange={(e)=>setUserData({...userData, "cvv" : e.target.value})} variant="outlined" color="secondary"/>
-        </div>
+        </div> 
         <div>
         <button variant="contained" onClick={() => setStep(2)} color="secondary">Back</button> <span></span>
         <button variant="contained" onClick={submitData} color="primary">Aceptar</button>
@@ -26,4 +26,4 @@ const ThirdStep= () => {
     )
 }
  
-export default ThirdStep
+export default ThirdStepE

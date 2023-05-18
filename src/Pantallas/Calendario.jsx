@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './../Pantallas/Calendario.module.css';
+import styles from './Calendario.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -10,19 +10,19 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { NavLink } from 'react-router-dom';
 
+
 import c1 from '../img/CursoGuadalajara.jpg'
 import c2 from '../img/CursoSanLuis.jpg'
 import c3 from '../img/CursoTampico.jpg'
 
 const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
+    root: {
+      maxWidth: 345,
+    },
+  });
 
-const adminHome = () => {
-  const classes = useStyles();
-
+const Calendario = () => {
+    const classes = useStyles();
   return (
     <div className={styles.calendario}>
         <div className={styles.cont1}>
@@ -119,4 +119,5 @@ const adminHome = () => {
     </div>
   )
 }
-export default adminHome
+
+export default Calendario

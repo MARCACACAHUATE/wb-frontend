@@ -3,12 +3,12 @@ import {Button, TextField} from'@material-ui/core';
 import { BurstMode } from "@material-ui/icons";
 
 import { multiStepContext } from "../StepContext";
-
+import './steps.css'
 
 const SecondStep= () => {
     const { setStep, userData, setUserData} = useContext(multiStepContext);
     return(
-    <div>
+    <div className="conteiner">
         <div>
         <TextField label="Curso" value={userData['curso']} onChange={(e)=>setUserData({...userData, "curso" : e.target.value})} margin="normal" variant="outlined" color="secondary"/>
         </div>

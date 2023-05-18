@@ -132,8 +132,8 @@ const adminFormCursos = () => {
                   <div className="col-sm-10">
                   <select className='form-control' {...register("estado")}>
                     <option value="Nuevo León" selected={evento.estado=="Nuevo León"}>Nuevo León</option>
-                    <option value="Coahuila" selected={evento.estado=="Coahuila"}>Coahuila</option>
-                    <option value="Tamaulipas" selected={evento.estado=="Tamaulipas"}>Tamaulipas</option>
+                    {/* <option value="Coahuila" selected={evento.estado=="Coahuila"}>Coahuila</option> */}
+                    {/* <option value="Tamaulipas" selected={evento.estado=="Tamaulipas"}>Tamaulipas</option> */}
                   </select>
                   </div>
                 </div>

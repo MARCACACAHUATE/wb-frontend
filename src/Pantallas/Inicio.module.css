@@ -3,29 +3,61 @@
     padding: 20px 20px 200px;
     height:100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
+   
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     color: #504d4d;
     padding: 20px 20px 200px;
     text-align: center;
+    
 }
-.principal{
+#principal{
     display: flex;
+    float: left;
+    width: 900px;
+    margin: 40px;
+    font-size: 25px;
+}
+#secundario{
+    display: flex;
+    float:right;
+    width: auto;
+    margin: auto;
 }
 
-.slider{
+#tercero{
     display: flex;
+    float: right;
+    width: 900px;
+    margin: 40px;
+    font-size: 25px;
+}
+#cuarto{
+    display: flex;
+    float:left;
+    width: auto;
+    margin: auto;
+}
+#cont1{
+    display: flex;
+}
+#parte2{
+}
+.slider{
+   text-align: right;
+   float: left;
 }
 .titleContainer {
     padding-top: 20px;
-   
+    
+    
     
 }
 .inicio p{
     font-size: 1em;
     font-weight:500;
     color: #504d4d;
+    text-align: justify;
 }
 
 
@@ -42,24 +74,24 @@
 }
 
 .callToAction:hover{
-    padding: 15px;
+    padding: 10px;
     cursor:pointer;
     
     
 }
 
 .ctaContainer{
-    padding-top: 40px;
-    
+    padding-top: 5px;
+
 }
 
 .titleContainer2 {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-right: 20px;
     
 }
 .ctaContainer2{
-    padding-top: 40px;
+    padding-top: 20px;
     
 }
 
@@ -69,4 +101,10 @@
 
 .carousel, .carousel-inner > .item > img {
     height: 70px;
+  }
+
+.titulo{
+    color:#f91bb6;
+    font-weight: 700;
+    font-size: 60px;
   }

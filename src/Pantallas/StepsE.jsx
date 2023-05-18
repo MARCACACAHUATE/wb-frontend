@@ -1,31 +1,24 @@
 import React, {useContext} from "react";
 import {Stepper, StepLabel, Step} from '@material-ui/core';
-import { multiStepContext } from './../StepContext';
-import FirstStep from './FirstStep';
-import SecondStep from './SecondStep';
-import ThirdStep from './ThirdStep';
+import { multiStepContext } from '../StepContext';
+import FirstStepE from "./FirstStepE";
+import SecondStepE from "./SecondStepE";
+import ThirdStepE from "./ThirdStepE";
 
-
-
-const Steps = () => {
-
+const StepsE = () => {
     const { currentStep, finalData}  = useContext(multiStepContext);
   function showStep(step){
     switch(step){
       case 1 :
-        return <FirstStep/>
+        return <FirstStepE/>
         case 2 :
-          return <SecondStep/>
+          return <SecondStepE/>
           case 3 :
-            return <ThirdStep/>
-            
+            return <ThirdStepE/>
     }
   }
-
-  return( 
-    
+  return(
     <div className='center-stepper'>
-      <h1> Da el primer paso, ¡Inscríbete a uno de nuestros cursos!</h1>
     <Stepper style={{width:'18%'}} activeStep={currentStep - 1} orientation='horizontal'>
       <Step>
         <StepLabel></StepLabel>
@@ -40,9 +33,8 @@ const Steps = () => {
   
   {showStep(currentStep)}
   </div>
-
   )
    
 }
 
-export default Steps
+export default StepsE

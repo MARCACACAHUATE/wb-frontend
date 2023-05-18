@@ -1,0 +1,53 @@
+.calendario{
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    color: #504d4d;
+    padding: 20px 20px 200px;
+    text-align: center;
+    margin: auto;
+   
+}
+.tarjetas{
+    padding: 15px;
+    margin: auto auto;
+    display: flex;
+    justify-content:center
+}
+
+.tarjeta1{
+    margin: 5px;
+}
+.tarjeta2{
+    margin: 5px;
+}
+.tarjeta3{
+    margin: 5px;
+}
+
+.callToAction{
+    background-color: rgb(241, 24, 219);
+    padding: 10px;
+    border-radius:30px;
+    transition: 0.5s;
+    color: rgb(252, 252, 252);
+    text-decoration: none;
+    margin: auto;
+    
+}
+
+.callToAction:hover{
+    padding: 10px;
+    cursor:pointer;
+    
+    
+}
+.cont1{
+   
+}
+.titulo{
+    color:#f91bb6;
+    font-weight: 700;
+    font-size: 50px;
+}

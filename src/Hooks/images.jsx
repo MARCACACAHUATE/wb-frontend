@@ -6,3 +6,4 @@ import image4 from '../img/curso4.jpg'
 import image5 from '../img/curso5.jpg'
 
 export default [ image1, image2, image3, image4, image5]
+

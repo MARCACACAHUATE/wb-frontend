@@ -1,12 +1,15 @@
 import  Navbar from "./Menu/Navbar";
 import  NavbarAdmin from "./Menu/NavbarAdmin";
 import Inicio from "./Pantallas/Inicio";
+
 import Cursos from "./Pantallas/Cursos";
 import Eventos from "./Pantallas/Eventos";
 import Usuario from "./Pantallas/Usuario";
 import Slider1 from "./Pantallas/Slider1";
+import ListaPer from './Pantallas/PersonalizarE';
 import Steps from "./Pantallas/Steps";
-
+import Calendario from "./Pantallas/Calendario";
+import StepsE from "./Pantallas/StepsE";
 import Admin from "./admin/adminHome";
 import AdminCursos from "./admin/adminCursos";
 import AdminEmpleados from "./admin/adminEmpleados";
@@ -43,7 +46,10 @@ function App() {
         <Route exact path="/Usuario" element={<Usuario/>}/>
         <Route exact path="/Slider1" element={<Slider1/>}/>
         <Route exact path="/Inscripción" element={<Steps/>}/>
+        <Route exact path="/Calendario" element={<Calendario/>}/>
 
+        
+        
         <Route exact path="/Admin" element={<Admin/>}/>
         <Route exact path="/Admin/adminCursos" element={<AdminCursos/>}/>
         <Route exact path="/Admin/adminEmpleados" element={<AdminEmpleados/>}/>
@@ -53,7 +59,7 @@ function App() {
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
-
+        
        </Routes>
       </BrowserRouter>
 

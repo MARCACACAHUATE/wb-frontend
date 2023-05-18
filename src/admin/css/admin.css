@@ -93,3 +93,110 @@
 .label{
     margin-right: 10px !important;
 }
+
+.body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 70px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.Usuario{
+    height:100% !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    color: #504d4d;
+    padding: 20px 20px 200px;
+    text-align: center;
+}
+
+.Usuario form{
+    padding: 50px 55px 85px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 340px;
+    margin: auto;
+}
+.Usuario .input-group{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.body h2{
+    color: #dd3131;
+    font-size: 35px;
+    margin: 0;
+}
+
+
+.body .line{
+    padding: 15px;
+    display: inline-block;
+    width: 50px;
+    height: 7px;
+}
+
+.body label{
+    color: #1B1B1B;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.body select{
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: 2px solid #c5c1c1;
+}
+.body .form-cont{
+    color: #1B1B1B;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.body .form-control{
+    padding: 17px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #c5c1c1;
+}
+
+.body input{
+    padding: 17px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #c5c1c1;
+    color: #1B1B1B;
+}
+
+.body input::placeholder{
+    color: #1B1B1B;
+
+}
+
+.body .form-txt{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+}
+
+.body .form-txt a {
+    color: #1B1B1B;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.body .btn{
+    font-size: 16px;
+    color: #424242;
+    border: 0;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
+    cursor: pointer;
+}

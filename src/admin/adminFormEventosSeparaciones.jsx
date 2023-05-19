@@ -4,6 +4,7 @@ import styles from "./../Pantallas/Inicio.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { reqqResapi } from "../api/reqRes";
+import moment from 'moment';
 
 
 const AdminFormEventosSeparaciones = () => {
@@ -12,10 +13,20 @@ const AdminFormEventosSeparaciones = () => {
  
   let separacion = {};
 
+  const fechaformat =(fechaOriginal) =>{
+    const fechaFormateada = moment(fechaOriginal).format('YYYY-MM-DD');
+    return fechaFormateada
+  }
+
+  const fechaformatSend =(fechaOriginal) =>{
+    const fechaFormateada = moment(fechaOriginal).format('DD-MM-YYYY');
+    return fechaFormateada
+  }
+
   if (state!=undefined) {
+    state.separacion.fecha = fechaformat(state.separacion.fecha);
     separacion = state.separacion;
     console.log(separacion);
-    
   }
 
   const navigate = useNavigate();
@@ -23,6 +34,7 @@ const AdminFormEventosSeparaciones = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
+    data.fecha = fechaformatSend(data.fecha);
     if (state!=undefined) {
       ModifyEvento(data);
     }else{
@@ -35,14 +47,14 @@ const AdminFormEventosSeparaciones = () => {
     console.log(Jsonsend);
 
     //llamado al api promesa y se le asigna la interfaz
-    // const resp = await reqqResapi.post("api/eventos/",Jsonsend).then((res) => {
-    //   if (res.data.error) {
-    //     alert(res.data.message);
-    //   } else {
-    //     alert(res.data.message);
-        navigate("/Admin/adminEventos");
-    //   }
-    // });
+    const resp = await reqqResapi.post("api/eventos/",Jsonsend).then((res) => {
+      if (res.data.error) {
+        alert(res.data.message);
+      } else {
+        alert(res.data.message);
+        // navigate("/Admin/adminEventos");
+      }
+    });
   };
 
   const ModifyEvento = async (Jsonsend) => {
@@ -51,14 +63,17 @@ const AdminFormEventosSeparaciones = () => {
 
     //llamado al api promesa y se le asigna la interfaz
     const resp = await reqqResapi.put("api/eventosseparacions/"+separacion.id,Jsonsend).then((res) => {
+      console.log(res);
       if (res.data.error) {
         alert(res.data.message);
       } else {
         alert(res.data.message);
-        navigate("/Admin/adminEventos");
+        // navigate("/Admin/adminEventos");
       }
     });
   };
+
+
 
   return (
     <div className={styles.inicio}>
@@ -106,6 +121,7 @@ const AdminFormEventosSeparaciones = () => {
                   <div className="col-sm-10">
                   <input type="time" className="form-control" id="lname" placeholder="Ingresa la hora del evento" name="lname" pattern="[0-9]{2}:[0-9]{2}" {...register("horaEvento")} defaultValue={separacion.horaEvento} required/>
                   <input type="hidden" className="form-control" id="lname2" placeholder="Ingresa la hora del evento" name="lname2" pattern="[0-9]{2}:[0-9]{2}" {...register("HoraMontaje")} defaultValue={"01:00"} required/>
+                  <input type="hidden" className="form-control" id="lname2" placeholder="Ingresa la hora del evento" name="lname2" {...register("id_Evento")} defaultValue={separacion.id_Evento} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">

@@ -13,12 +13,8 @@ const adminEventosSeparaciones = () => {
     getEventosSeparacionesList();
   }, [isUpdate]);
 
-  // useEffect(() => {
-  //   setEventoName();
-  // }, [isUpdate2]);
-
   const getEventosSeparacionesList = async() => {
-    const res = await reqqResapi.get('api/eventos',{params:{
+    const res = await reqqResapi.get('api/eventosseparacions',{params:{
       month:"mayo",
       year:"2023"
     }}).then(res => {
@@ -29,18 +25,18 @@ const adminEventosSeparaciones = () => {
               console.log(res.data.data);
               // setEventosSeparacionesList(res.data.data);
               // getEventosList();
-              let separaciones = [];
-              let indice = 0;
+              // let separaciones = [];
+              // let indice = 0;
 
-              if (res.data.data) {
-                res.data.data.forEach(evento => {
-                    separaciones.push(evento.separacion);
-                    separaciones[indice].nombrePaquete = evento.nombrePaquete;
-                    indice++;         
-                });
-                console.log(separaciones);
-                setEventosSeparacionesList(separaciones);
-              }
+              // if (res.data.data) {
+              //   res.data.data.forEach(evento => {
+              //       separaciones.push(evento.separacion);
+              //       separaciones[indice].nombrePaquete = evento.nombrePaquete;
+              //       indice++;         
+              //   });
+              //   console.log(separaciones);
+                setEventosSeparacionesList(res.data.data);
+              // }
 
               
         }

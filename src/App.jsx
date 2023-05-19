@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {    
-          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' 
+          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Calendario' 
             ? <Navbar /> 
             : <NavbarAdmin />
     

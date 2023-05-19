@@ -1,18 +1,19 @@
-import React from 'react'
-import styles from './../Pantallas/Calendario.module.css';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import styles from "./../Pantallas/Calendario.module.css";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { NavLink } from "react-router-dom";
+import { reqqResapi } from "../api/reqRes";
 
-import c1 from '../img/CursoGuadalajara.jpg'
-import c2 from '../img/CursoSanLuis.jpg'
-import c3 from '../img/CursoTampico.jpg'
+import c1 from "../img/CursoGuadalajara.jpg";
+import c2 from "../img/CursoSanLuis.jpg";
+import c3 from "../img/CursoTampico.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -23,100 +24,78 @@ const useStyles = makeStyles({
 const adminHome = () => {
   const classes = useStyles();
 
+  const [isUpdate, setisUpdate] = useState(false);
+  const [EventosList, setEventosList] = useState([]);
+
+  useEffect(() => {
+    getEventosList();
+  }, [isUpdate]);
+
+  const getEventosList = async() => {
+
+    const res = await reqqResapi.get('api/eventos').then(res => {
+
+        if (res.data.error) {
+              console.log(res.data.error);
+        } else {
+              console.log(res.data.data);
+              setEventosList(res.data.data);
+        }
+
+    });   
+  }
+
   return (
     <div className={styles.calendario}>
-        <div className={styles.cont1}>
-        <h1 className={styles.titulo}>¡Descubre nuestros cursos disponibles en diferentes partes de México!</h1>
-        </div>
-        <div className={styles.tarjetas}>
-            <div className={styles.tarjeta1}>
-        <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Curso1"
-          height="420"
-          image={c1}
-          title="Curso globos y follaje"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-          Curso globos y follaje
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
-            Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm  <br />
-            Lugar: Guadalajara
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <NavLink to="/Inscripción" smooth
-                    duration={500} className={styles.callToAction}>Inscribirse</NavLink>
-      </CardActions>
-    </Card>
+      <div className={styles.cont1}>
+        <h1 className={styles.titulo}>
+          Eventos disponibles
+        </h1>
+      </div>
+      <div className={styles.tarjetas}>
+        
+        {
+          EventosList?.map(evento => (
+            <div key={evento.id} className={styles.tarjeta1}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Curso1"
+                  height="420"
+                  image={c1}
+                  title="Curso globos y follaje"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {evento.nombrePaquete}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    El evento ideal para tu "{evento.ocasion}".
+                    ¡Ven y disfruta de nuestro servicio, vamos hasta tu {evento.ocasion} vamos hasta tu {evento.ocasion}!<br /><br />
+                    Costo de envío: $<strong>{evento.costoEnvioMaterial}</strong><br />
+                    Costo de reservación: $<strong>{evento.costo_reservacion}</strong><br />
+                    Costo total: $<strong>{evento.costo_total}</strong><br />
+                    Estado: {evento.estado}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <NavLink
+                  to="/Inscripción"
+                  smooth
+                  duration={500}
+                  className={styles.callToAction}
+                >
+                  Inscribirse
+                </NavLink>
+              </CardActions>
+            </Card>
+            </div>
+          ))                     
+        }
+      </div>
     </div>
-
-    <div className={styles.tarjeta2}>
-        <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Curso1"
-          height="420"
-          image={c2}
-          title="Curso globos y follaje"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-          Curso globos y follaje
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
-            Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm  <br />
-            Lugar: San Luis
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <NavLink to="/Inscripción" smooth
-                    duration={500} className={styles.callToAction}>Inscribirse</NavLink>
-      </CardActions>
-    </Card>
-    </div>
-
-    <div className={styles.tarjeta3}>
-        <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Curso1"
-          height="420"
-          image={c3}
-          title="Curso globos y follaje"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-          Curso globos y follaje
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
-            Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm   <br />
-            Lugar: Tampico
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <NavLink to="/Inscripción" smooth
-                    duration={500} className={styles.callToAction}>Inscribirse</NavLink>
-      </CardActions>
-    </Card>
-    </div>
-    </div>
-    </div>
-  )
-}
-export default adminHome
+  );
+};
+export default adminHome;

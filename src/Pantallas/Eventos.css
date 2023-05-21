@@ -14,14 +14,17 @@
     margin-bottom: 30px;
     justify-content: center;
     border-radius: 15px;
+    
     }
 .list{
     
-    list-style : none;
+    list-style: none;
     margin-left: none;
     text-align: left;    
 }
-
+.listI{
+    list-style: none;
+}
 
 .botonesE:hover {
     box-shadow:
@@ -47,6 +50,7 @@ img{
  
 .customButton {
     display:flex;
+    text-decoration: none;
     width: 100px;
     margin-left: 25%;
     margin-bottom: 5%;

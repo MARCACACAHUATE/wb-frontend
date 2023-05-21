@@ -38,7 +38,7 @@ const Cursos = () => {
         <h3 className={styles.resaltar}>¿Qué aprenderás?</h3>
         <div className={styles.lista}>
         
-        <ul> 
+        <ul className='c'> 
           <li className={styles.tabla}>Armado de Estructuras con poca inversión</li>
           <li className={styles.tabla}>Enlonado y fundas para estructuras</li>
           <li className={styles.tabla}>Montaje de Arcos de entrada</li>

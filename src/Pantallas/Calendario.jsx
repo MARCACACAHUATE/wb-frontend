@@ -46,7 +46,7 @@ const Calendario = () => {
           <Typography variant="body2" color="textSecondary" component="p">
             Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
             Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm  <br />
+            Horario: 10:00 am a 6:00pm  <br />
             Lugar: Guadalajara
           </Typography>
         </CardContent>
@@ -74,8 +74,8 @@ const Calendario = () => {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
-            Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm  <br />
+            Fecha: 13 y 14 Junio 2023 <br />
+            Horario: 10:00 am a 6:00pm  <br />
             Lugar: San Luis
           </Typography>
         </CardContent>
@@ -103,8 +103,8 @@ const Calendario = () => {
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Curso completo para prender todo sobre la decoración profesional con globos, flores y follaje. ¡Ven y aprende con nosotros lo último en tendencia! <br />
-            Fecha: 03 y 04 Junio 2023 <br />
-            Horario: 10:00 am y 6:00pm   <br />
+            Fecha: 17 y 18 Junio 2023 <br />
+            Horario: 10:00 am a 6:00pm   <br />
             Lugar: Tampico
           </Typography>
         </CardContent>

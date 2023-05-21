@@ -26,7 +26,7 @@ const FirstStep= () => {
         <TextField label="Teléfono" value={userData['telefono']} onChange={(e)=>setUserData({...userData, "telefono" : e.target.value})} margin="normal" variant="outlined" color="secondary"/>
         </div>
         <div>
-        <TextField label="Correo" value={userData['correo']} onChange={(e)=>setUserData({...userData, "correo" : e.target.value})} margin="normal" variant="outlined" color="secondary"/>
+        <TextField label="Correo electónico" value={userData['correo']} onChange={(e)=>setUserData({...userData, "correo" : e.target.value})} margin="normal" variant="outlined" color="secondary"/>
         </div>
         <div>
         <button variant="contained" onClick={() => setStep(2)} color="primary">Next</button>

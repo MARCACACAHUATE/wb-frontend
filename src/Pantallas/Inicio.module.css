@@ -41,8 +41,7 @@
 #cont1{
     display: flex;
 }
-#parte2{
-}
+
 .slider{
    text-align: right;
    float: left;
@@ -95,9 +94,7 @@
     
 }
 
-.container{
-    display:inline-flexbox;
-}
+
 
 .carousel, .carousel-inner > .item > img {
     height: 70px;

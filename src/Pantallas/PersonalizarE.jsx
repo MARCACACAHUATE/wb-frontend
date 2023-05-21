@@ -47,7 +47,24 @@ const ListaPer = () => {
           placeholder="Selecciona servicios extra"
           isMulti
           options={dataE}
+          
         />
+        
+         
+            <input
+           className ="inputGroup" 
+           placeholder="Escribe las letras/numeros que requieres" 
+           type="text" required="" 
+           autocomplete="off"/>
+           <Select className="options"
+          closeMenuOnScroll={false}
+          components={makeAnimated}
+          placeholder="Selecciona el tipo de mesa que deseas"
+          
+          options={[{value:"dulce", label:"Dulce"}]}
+          
+        />
+           
       </div>
       
     </div>

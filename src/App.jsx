@@ -1,7 +1,7 @@
 import  Navbar from "./Menu/Navbar";
 import  NavbarAdmin from "./Menu/NavbarAdmin";
 import Inicio from "./Pantallas/Inicio";
-
+import Footer from "./Pantallas/Footer";
 import Cursos from "./Pantallas/Cursos";
 import Eventos from "./Pantallas/Eventos";
 import Usuario from "./Pantallas/Usuario";
@@ -44,6 +44,7 @@ function App() {
         <Route exact path="/Inicio" element={<Inicio/>}/>
         <Route exact path="/Cursos" element={<Cursos/>}/>
         <Route exact path="/Eventos" element={<Eventos/>}/>
+        <Route exact path="/Eventos/:decoration" element={<ListaPer/>}/>
         <Route exact path="/Usuario" element={<Usuario/>}/>
         <Route exact path="/Slider1" element={<Slider1/>}/>
         <Route exact path="/Inscripción" element={<Steps/>}/>
@@ -61,8 +62,10 @@ function App() {
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
         <Route exact path="/Admin/adminFormEventosSeparaciones" element={<AdminFormEventosSeparaciones/>}/>
-        
+
        </Routes>
+
+       <Footer/>
       </BrowserRouter>
 
 

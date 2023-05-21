@@ -10,7 +10,6 @@ const Ineventos = () => {
   return (
     <div className={styles.inicio}>
       <div id={styles.cont1}>
-
       <div id={styles.cuarto}>
       <div className="slider">
         

@@ -32,6 +32,7 @@ const Navbar =()=>{
 
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto">
+
           <h4><NavLink to="/Admin" className="nav-item nav-link" style={{color: "dark"}}>Inicio</NavLink></h4>
           <h4><NavLink to="/Admin/adminCursos" className="nav-item nav-link" style={{color: "dark"}}>Cursos</NavLink></h4>
           <h4><NavLink to="/Admin/adminEventos" className="nav-item nav-link" style={{color: "dark"}}>Eventos</NavLink></h4>

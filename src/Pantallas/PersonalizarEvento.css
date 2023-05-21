@@ -8,8 +8,6 @@
     color: #504d4d;
     padding: 20px 20px 200px;
     text-align:justify;
-    
-    
 }
 
 .containerP{
@@ -47,7 +45,7 @@
 .select{
     
     
-    text-align: center;
+    text-align: left;
     width: 380;
 
 }
@@ -86,4 +84,26 @@ margin-top: 100px;
     width: 380px;
     transition: .5s;
     
+}
+
+.contenedor{
+    width: 900px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    left:50px;
+    background-color: white;
+}
+
+.pregunta{
+    padding: 5px;
+    margin: 5px;
+}
+
+.imgEvento{
+    position: absolute;
+    right: 40px;
+    top: 150px;
+    width: 30%;
+    border-radius: 30px;
 }

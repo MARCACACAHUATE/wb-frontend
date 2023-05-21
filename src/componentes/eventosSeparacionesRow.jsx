@@ -7,6 +7,26 @@ const EventosSeparacionesRow = ({separacion}) => {
 
   const navigate = useNavigate();
 
+  // const [EventosList, setEventosList] = useState([]);
+
+  // useEffect(() => {
+  //   getEventosList();
+  // }, []);
+
+  // const getEventosList = async() => {
+
+  //   const res = await reqqResapi.get('api/eventos').then(res => {
+
+  //       if (res.data.error) {
+  //             console.log(res.data.error);
+  //       } else {
+  //             console.log(res.data.data);
+  //             setEventosList(res.data.data);
+  //       }
+
+  //   });   
+  // }
+
   const deleteEvento = async (id) => {
 
     if (confirm("¿Está seguro de que desea eliminar este elemento?")) {
@@ -54,7 +74,7 @@ const EventosSeparacionesRow = ({separacion}) => {
             {" "}
         </svg>
         </button>
-        <button onClick={()=>deleteEvento(separacion.id)} type="button" className="btn btn-danger">
+        <button onClick={()=>deleteEvento(separacion.id)} type="button" className="btn btn-danger" disabled={sessionStorage.getItem('role')!="Admin"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

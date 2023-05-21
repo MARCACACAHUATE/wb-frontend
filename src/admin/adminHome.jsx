@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
 
 import c1 from "../img/CursoGuadalajara.jpg";
@@ -22,8 +22,9 @@ const useStyles = makeStyles({
 });
 
 const adminHome = () => {
-  const classes = useStyles();
+  const navigate = useNavigate();
 
+  const classes = useStyles();
   const [isUpdate, setisUpdate] = useState(false);
   const [EventosList, setEventosList] = useState([]);
 
@@ -38,12 +39,19 @@ const adminHome = () => {
         if (res.data.error) {
               console.log(res.data.error);
         } else {
-              console.log(res.data.data);
-              setEventosList(res.data.data);
+              let nuevo = res.data.data.slice(res.data.data.length - 4);
+              setEventosList(nuevo);
         }
 
     });   
   }
+
+  const modifyEvento = async (evento) => {
+    // history.push('/Admin/adminFormEventos', { param: evento });
+    navigate("/Admin/adminFormEventos", {
+        state: { evento: evento },
+      })
+  };
 
   return (
     <div className={styles.calendario}>
@@ -81,14 +89,12 @@ const adminHome = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <NavLink
-                  to="/Inscripción"
-                  smooth
-                  duration={500}
+                <div
                   className={styles.callToAction}
+                  onClick={()=>modifyEvento(evento)}
                 >
-                  Inscribirse
-                </NavLink>
+                  Ver Evento
+                </div>
               </CardActions>
             </Card>
             </div>

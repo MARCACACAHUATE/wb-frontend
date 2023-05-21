@@ -7,19 +7,18 @@ const EmpleadosRow = ({empleado}) => {
   const navigate = useNavigate();
 
   const deleteEvento = async (id) => {
-
-    // if (confirm("¿Está seguro de que desea eliminar este elemento?")) {
-    //     //llamado al api promesa y se le asigna la interfaz
-    //     const resp = await reqqResapi.delete("api/eventos/"+id).then((res) => {
-    //         if (res.data.error) {
-    //         alert(res.data.message);
-    //         } else {
-    //         alert(res.data.message);
-    //         // se actualiza la tabla
-    //         window.location.reload();
-    //         }
-    //     });
-    // }
+    if (confirm("¿Está seguro de que desea eliminar este Usuario?")) {
+        //llamado al api promesa y se le asigna la interfaz
+        const resp = await reqqResapi.delete("api/users/"+id).then((res) => {
+            if (res.data.error) {
+            alert(res.data.message);
+            } else {
+            alert(res.data.message);
+            // se actualiza la tabla
+            window.location.reload();
+            }
+        });
+    }
     
   };
 

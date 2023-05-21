@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
 
-const EventosRow = ({evento}) => {
+const EventosRow = ({evento,rol}) => {
 
   const navigate = useNavigate();
-
+  
   const deleteEvento = async (id) => {
 
     if (confirm("¿Está seguro de que desea eliminar este elemento?")) {
@@ -47,7 +47,8 @@ const EventosRow = ({evento}) => {
             {" "}
         </svg>
         </button>
-        <button onClick={()=>deleteEvento(evento.id)} type="button" className="btn btn-danger">
+        
+        <button onClick={()=>deleteEvento(evento.id)} type="button" className="btn btn-danger" disabled={sessionStorage.getItem('role')!="Admin"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

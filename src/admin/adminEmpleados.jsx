@@ -7,14 +7,22 @@ import EmpleadosRow from '../componentes/empleadosRow';
 const adminEmpleados = () => {
   const [isUpdate, setisUpdate] = useState(false);
   const [UserList, setUserList] = useState([]);
+  const [filterText, setFilterText] = useState('');
 
   useEffect(() => {
     getUsersList();
   }, [isUpdate]);
 
   const getUsersList = async() => {
+    const Token = sessionStorage.getItem('token');
+    console.log(Token);
+    const headers = {
+      'Authorization': 'Bearer '+Token,
+    };
 
-    const res = await reqqResapi.get('api/users').then(res => {
+    console.log(headers);
+
+    const res = await reqqResapi.get('api/users', { headers }).then(res => {
 
         if (res.data.error) {
               console.log(res.data.error);
@@ -22,11 +30,29 @@ const adminEmpleados = () => {
               console.log(res.data.data);
               setUserList(res.data.data);
         }
-
     });   
   }
 
+const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
 
+  const filteredData = UserList.filter((item) => {
+    // Convierte las propiedades de texto a minúsculas para una comparación insensible a mayúsculas y minúsculas
+    const lowerCaseFilterText = filterText.toLowerCase();
+
+    // Verifica si alguna de las propiedades del objeto coincide con el texto filtrado
+    return (
+      item.first_name.toLowerCase().includes(lowerCaseFilterText) ||
+      item.last_name.toLowerCase().includes(lowerCaseFilterText) ||
+      item.email.toLowerCase().includes(lowerCaseFilterText) ||
+      item.telefono.toString().includes(filterText) ||
+      item.calle.toLowerCase().includes(lowerCaseFilterText) ||
+      item.numero.toLowerCase().includes(lowerCaseFilterText) ||
+      item.municipio.toLowerCase().includes(lowerCaseFilterText)
+    );
+  });
+  
   return (
     <div className={styles.inicio}>
       {/* div tabla */}
@@ -38,7 +64,7 @@ const adminEmpleados = () => {
                 <h5 className="card-title">
                   Usuarios{" "}
                   <span className="text-muted fw-normal ms-2">
-                    (#20 Usuarios)
+                    (#{UserList.length} Usuarios)
                   </span>
                 </h5>
               </div>
@@ -51,6 +77,8 @@ const adminEmpleados = () => {
                     type="search"
                     placeholder="Buscar"
                     aria-label="Search"
+                    value={filterText}
+                    onChange={handleFilterChange}
                   />
                   <button
                     className="btn btn-outline-dark my-2 my-sm-0"
@@ -92,7 +120,7 @@ const adminEmpleados = () => {
                     </thead>
                     <tbody>
                       {
-                          UserList?.map(empleado => (
+                          filteredData?.map(empleado => (
                               <EmpleadosRow key={empleado.id} empleado={empleado} update={isUpdate} setUpdate={setisUpdate}/>
                           ))                     
                       }
@@ -105,7 +133,7 @@ const adminEmpleados = () => {
           <div className="row g-0 align-items-center pb-4">
             <div className="col-sm-6">
               <div>
-                <p className="mb-sm-0">Mostrando #20 Usuarios</p>
+                <p className="mb-sm-0">Mostrando #{UserList.length} Usuarios</p>
               </div>
             </div>
             <div className="col-sm-6"></div>

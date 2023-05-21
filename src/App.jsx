@@ -1,7 +1,7 @@
 import  Navbar from "./Menu/Navbar";
 import  NavbarAdmin from "./Menu/NavbarAdmin";
 import Inicio from "./Pantallas/Inicio";
-
+import Footer from "./Pantallas/Footer";
 import Cursos from "./Pantallas/Cursos";
 import Eventos from "./Pantallas/Eventos";
 import Usuario from "./Pantallas/Usuario";
@@ -60,8 +60,9 @@ function App() {
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
-        
        </Routes>
+
+       <Footer/>
       </BrowserRouter>
 
 

@@ -3,6 +3,7 @@ import Select from 'react-select'
 import makeAnimated from "react-select/animated"; // Importa desde la ruta correcta
 import { dataE } from "./DatosEventos.js";
 import "./PersonalizarEvento.css";
+import imgEvento from '../img/eventoAro.jpg'
 
 const ListaPer = () => {
   return (
@@ -81,6 +82,7 @@ const ListaPer = () => {
           </form>
           <button className="buttonComp">Comprar</button>
         </div>
+        <img src={imgEvento} alt="" className="imgEvento"/>
     </div>
     
     </>

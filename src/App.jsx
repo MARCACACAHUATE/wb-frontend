@@ -19,6 +19,7 @@ import AdminFormCursos from "./admin/adminFormCursos";
 import AdminFormEmpleados from "./admin/adminFormEmpleados";
 import AdminFormEventos from "./admin/adminFormEventos";
 import AdminSeparacionCursos from "./admin/adminSeparacionCursos";
+import AdminFormEventosSeparaciones from "./admin/adminFormEventosSeparaciones";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -59,6 +60,7 @@ function App() {
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
+        <Route exact path="/Admin/adminFormEventosSeparaciones" element={<AdminFormEventosSeparaciones/>}/>
         
        </Routes>
       </BrowserRouter>

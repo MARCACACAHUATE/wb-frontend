@@ -27,7 +27,8 @@ const adminEventosSeparaciones = () => {
                     }
                   });                  
                 });
-      });   
+      });
+      res.data.data.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
       console.log(res.data.data);
         setEventosSeparacionesList(res.data.data);                   
     });   

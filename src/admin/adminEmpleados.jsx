@@ -27,6 +27,7 @@ const adminEmpleados = () => {
         if (res.data.error) {
               console.log(res.data.error);
         } else {
+              res.data.data.sort((a, b) => new Date(a.id_TipoUser) - new Date(b.id_TipoUser));
               console.log(res.data.data);
               setUserList(res.data.data);
         }
@@ -107,7 +108,7 @@ const handleFilterChange = (event) => {
                         <th scope="col" className="admincol" style={{ width: "200px" }}>
                           Acciones
                         </th>
-                        <th scope="col" className="admincol">Usuario ID</th>
+                        {/* <th scope="col" className="admincol">Usuario ID</th> */}
                         <th scope="col" className="admincol">Primer Nombre</th>
                         <th scope="col" className="admincol">Primer Apellido</th>
                         <th scope="col" className="admincol">Email</th>

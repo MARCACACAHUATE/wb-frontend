@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./../Pantallas/Inicio.module.css";
 import { NavLink } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
-import EventosRow from '../componentes/eventosRow';
+import EventosRow from './../componentes/eventosRow';
 
 const adminEventos = () => {
   const [isUpdate, setisUpdate] = useState(false);
@@ -23,6 +23,8 @@ const adminEventos = () => {
         if (res.data.error) {
               console.log(res.data.error);
         } else {
+              res.data.data.sort((a, b) => new Date(b.id) - new Date(a.id));
+
               console.log(res.data.data);
               setEventosList(res.data.data);
         }
@@ -108,11 +110,11 @@ const adminEventos = () => {
                         <th scope="col" className="admincol">Servicios</th>
                         <th scope="col" className="admincol">Mobiliario</th>
                         <th scope="col" className="admincol">Color-Globos</th>
+                        <th scope="col" className="admincol">Estado</th>
+                        <th scope="col" className="admincol">Municipio</th>
                         <th scope="col" className="admincol">Envio</th>
                         <th scope="col" className="admincol">Reservacion</th>
                         <th scope="col" className="admincol">Total</th>
-                        <th scope="col" className="admincol">Estado</th>
-                        <th scope="col" className="admincol">Municipio</th>
                       </tr>
                     </thead>
                     <tbody>

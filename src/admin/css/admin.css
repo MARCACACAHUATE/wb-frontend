@@ -200,3 +200,8 @@
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     cursor: pointer;
 }
+
+.moneda{
+    text-align: right;
+    min-width: 120px;
+}

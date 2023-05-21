@@ -75,7 +75,7 @@ const adminFormCursos = () => {
         alert(res.data.message);
       } else {
         alert(res.data.message);
-        // navigate("/Admin/adminEventos");
+        navigate("/Admin/adminEventos");
       }
     });
   };

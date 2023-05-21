@@ -78,62 +78,62 @@ const adminFormCursos = () => {
                 <div className="form-group form-cont form-cont">
                   <label className="control-label col-sm-6 label" for="fname">Nombre del curso:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre del curso" name="fname" {...register("nombreCurso")} defaultValue={curso.Nombre} required/>
+                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre del curso" name="fname" {...register("nombreCurso")} defaultValue={curso.Nombre} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="lname">Temática:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la temática" name="lname" {...register("tematica")} defaultValue={curso.Tematica} required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la temática" name="lname" {...register("tematica")} defaultValue={curso.Tematica} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="email">Detalles:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="email" placeholder="Ingresa los detalle " name="lname" {...register("detalle")} defaultValue={curso.Detalle} required/>
+                  <input type="text" className="form-control" id="email" placeholder="Ingresa los detalle " name="lname" {...register("detalle")} defaultValue={curso.Detalle} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="email">Cupo Máximo:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="email" placeholder="Ingresa una cantidad de personas" name="lname" {...register("cupo")} defaultValue={curso.Cupo} required/>
+                  <input type="text" className="form-control" id="email" placeholder="Ingresa una cantidad de personas" name="lname" {...register("cupo")} defaultValue={curso.Cupo} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Fecha inicio:</label>
                   <div className="col-sm-10">
-                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaInicio")} defaultValue={curso.fechaInicio} required/>
+                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaInicio")} defaultValue={curso.fechaInicio} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Fecha fin:</label>
                   <div className="col-sm-10">
-                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaFin")} defaultValue={curso.fechaFin} required/>
+                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaFin")} defaultValue={curso.fechaFin} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Costo de reservación:</label>
                   <div className="col-sm-10">
-                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de reservación" name="lname" {...register("CostoReservacion")} defaultValue={curso.CostoReservacion} required/>
+                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de reservación" name="lname" {...register("CostoReservacion")} defaultValue={curso.CostoReservacion} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Costo de total:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el costo de total" name="lname" {...register("CostoTotal")} defaultValue={curso.CostoTotal} required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el costo de total" name="lname" {...register("CostoTotal")} defaultValue={curso.CostoTotal} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Calle:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la calle" name="lname" {...register("Calle")} defaultValue={curso.Calle} required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la calle" name="lname" {...register("Calle")} defaultValue={curso.Calle} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Número:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el número" name="lname" {...register("Numero")} defaultValue={curso.Numero} required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el número" name="lname" {...register("Numero")} defaultValue={curso.Numero} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">

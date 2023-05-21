@@ -49,7 +49,7 @@ const adminFormCursos = () => {
     console.log(Jsonsend);
 
     //llamado al api promesa y se le asigna la interfaz
-    const resp = await reqqResapi.put("api/users/"+evento.id,Jsonsend).then((res) => {
+    const resp = await reqqResapi.put("api/users/"+empleado.id,Jsonsend).then((res) => {
       if (res.data.error) {
         alert(res.data.message);
       } else {
@@ -78,9 +78,9 @@ const adminFormCursos = () => {
               <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Tipo de Usuario:</label>
                   <div className="col-sm-10">
-                  <select className='form-control'>
-                    <option value="1" selected={empleado.colorGlobos=="Administrador"}>Administrador</option>
-                    <option value="2" selected={empleado.colorGlobos=="Empleado"}>Empleado</option>
+                  <select className='form-control' {...register("id_TipoUser")}>
+                    <option value="1" selected={empleado.id_TipoUser=="1"}>Administrador</option>
+                    <option value="2" selected={empleado.id_TipoUser=="2"}>Empleado</option>
                   </select>
                   </div>
                 </div>
@@ -103,12 +103,39 @@ const adminFormCursos = () => {
                   <input type="email" className="form-control" id="email" placeholder="ejemplo@dominio.com" name="email" {...register("email")} defaultValue={empleado.email} required/>
                   </div>
                 </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Contraseña:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la contraseña" name="lname" {...register("password")} defaultValue={empleado.password} required/>
-                  </div>
-                </div>
+                {
+                  Object.keys(empleado).length > 0
+                  ?(<>
+                  
+                  </>)
+                  :(<>
+                    <div className="form-group form-cont">
+                    <label className="control-label col-sm-6 label" for="comment">Contraseña:</label>
+                    <div className="col-sm-10">
+                    <input type="text" className="form-control" id="lname" placeholder="Ingresa la contraseña" name="lname" {...register("password", {
+                      required: 'La contraseña es requerida',
+                      minLength: {
+                        value: 8,
+                        message: 'La contraseña debe tener al menos 8 caracteres'
+                      }
+                    })} defaultValue={empleado.password} required/>
+                    </div>
+                    </div>
+                    <div className="form-group form-cont">
+                      <label className="control-label col-sm-6 label" for="comment">Confirmar contraseña:</label>
+                      <div className="col-sm-10">
+                      <input type="text" className="form-control" id="lname" placeholder="Ingresa la contraseña" name="lname" {...register("confirmPassword", {
+                        required: 'La contraseña es requerida',
+                        minLength: {
+                          value: 8,
+                          message: 'La contraseña debe tener al menos 8 caracteres'
+                        }
+                      })} required/>
+                      </div>
+                    </div>
+                  </>)
+                }
+                
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Teléfono:</label>
                   <div className="col-sm-10">
@@ -138,7 +165,12 @@ const adminFormCursos = () => {
                 </div>
                 <div className="form-group form-cont">        
                   <div className="col-sm-offset-2 col-sm-10">
-                  <button type="submit" className="btn btn-default">Agregar Usuario</button>
+                  <button type="submit" className="btn btn-default">
+                  {state!=undefined
+                      ? "Modificar Usuario"
+                      : "Crear Usuario"
+                    }
+                  </button>
                   </div>
                 </div>
               </div>

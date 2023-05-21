@@ -7,10 +7,14 @@ import EventosRow from '../componentes/eventosRow';
 const adminEventos = () => {
   const [isUpdate, setisUpdate] = useState(false);
   const [EventosList, setEventosList] = useState([]);
+  const [filterText, setFilterText] = useState('');
+  var rol = "";
 
   useEffect(() => {
+    rol = sessionStorage.getItem('role');
     getEventosList();
-  }, [isUpdate]);
+    console.log(rol);
+  }, []);
 
   const getEventosList = async() => {
 
@@ -26,6 +30,25 @@ const adminEventos = () => {
     });   
   }
 
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
+  
+  const filteredData = EventosList.filter((item) => {
+    // Convierte las propiedades de texto a minúsculas para una comparación insensible a mayúsculas y minúsculas
+    const lowerCaseFilterText = filterText.toLowerCase();
+
+    // Verifica si alguna de las propiedades del objeto coincide con el texto filtrado
+    return (
+      item.nombrePaquete.toLowerCase().includes(lowerCaseFilterText) ||
+      item.ocasion.toLowerCase().includes(lowerCaseFilterText) ||
+      item.servicios.toLowerCase().includes(lowerCaseFilterText) ||
+      item.mobiliario.toLowerCase().includes(lowerCaseFilterText) ||
+      item.colorGlobos.toLowerCase().includes(lowerCaseFilterText) ||
+      item.estado.toLowerCase().includes(lowerCaseFilterText)
+    );
+  });
+
   return (
     <div className={styles.inicio}>
       {/* div tabla */}
@@ -37,7 +60,7 @@ const adminEventos = () => {
                 <h5 className="card-title">
                   Eventos{" "}
                   <span className="text-muted fw-normal ms-2">
-                    (#20 Eventos)
+                    (#{EventosList.length} Eventos)
                   </span>
                 </h5>
               </div>
@@ -50,6 +73,8 @@ const adminEventos = () => {
                     type="search"
                     placeholder="Buscar"
                     aria-label="Search"
+                    value={filterText}
+                    onChange={handleFilterChange}
                   />
                   <button
                     className="btn btn-outline-dark my-2 my-sm-0"
@@ -60,7 +85,7 @@ const adminEventos = () => {
                 </form>
                 <div>
                   <NavLink to="/Admin/adminFormEventos">
-                    <button className="btn btn-outline-dark">
+                    <button className="btn btn-outline-dark" disabled={sessionStorage.getItem('role')!="Admin"}>
                       + Agregar Evento
                     </button>
                   </NavLink>
@@ -92,8 +117,8 @@ const adminEventos = () => {
                     </thead>
                     <tbody>
                       {
-                          EventosList?.map(evento => (
-                              <EventosRow key={evento.id} evento={evento} update={isUpdate} setUpdate={setisUpdate}/>
+                          filteredData?.map(evento => (
+                              <EventosRow key={evento.id} evento={evento} rol={sessionStorage.getItem('role')}/>
                           ))                     
                       }
                     </tbody>
@@ -105,7 +130,7 @@ const adminEventos = () => {
           <div className="row g-0 align-items-center pb-4">
             <div className="col-sm-6">
               <div>
-                <p className="mb-sm-0">Mostrando #20 Eventos</p>
+                <p className="mb-sm-0">Mostrando #{EventosList.length} Eventos</p>
               </div>
             </div>
             <div className="col-sm-6"></div>

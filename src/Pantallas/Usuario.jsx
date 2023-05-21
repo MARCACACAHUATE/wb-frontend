@@ -21,16 +21,28 @@ const Usuario = () => {
 
     console.log(Jsonsend);
 
-    //llamado al api promesa y se le asigna la interfaz
-    const resp = await reqqResapi.post("api/Users/auth",Jsonsend).then((res) => {
-      if (res.data.error) {
-        alert(res.data.message);
-      } else {
-        // alert(res.data.message);
-        alert("Bienvenido Administracion");
+    try {
+      //llamado al api promesa y se le asigna la interfaz
+      const resp = await reqqResapi.post("api/Users/auth",Jsonsend).then((res) => {
+        
+        alert("Bienvenido "+res.data.firstName+" "+res.data.lastName);
+        console.log(res.data.token);
+
+        sessionStorage.setItem('email',res.data.email);
+        sessionStorage.setItem('firstName',res.data.firstName);
+        sessionStorage.setItem('id',res.data.id);
+        sessionStorage.setItem('lastName',res.data.lastName);
+        sessionStorage.setItem('role',res.data.role);
+        sessionStorage.setItem('token',res.data.token);
+
         navigate("/Admin");
-      }
-    });
+
+      });
+      
+    } catch (error) {
+      alert("ERROR: "+error.response.data.error.Message);
+      console.log(error.response.data.error.Message);
+    }
   };
   return (
     <div className="body">

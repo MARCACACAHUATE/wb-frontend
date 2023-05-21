@@ -7,14 +7,15 @@ import data from "./DatosEventos.js"
 const Eventos = () => {
  
   return (
-    <>
-    <h1 className='tituloE'>Eventos/Servicios</h1>
-    <ul>
+    <div className="even">
+    <h1 className='tituloE'>Da un vistazo a nuestros paquetes de Eventos</h1>
+    <ul className='cuadros'>
     {data.map(paquete =>(<ButtonsE key ={paquete.id} paquete ={paquete}/> )
     )}
     </ul>
-    </>
-    );
+    </div>
+    
+    )
     
 };
 

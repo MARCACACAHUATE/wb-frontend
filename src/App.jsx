@@ -1,7 +1,7 @@
 import  Navbar from "./Menu/Navbar";
 import  NavbarAdmin from "./Menu/NavbarAdmin";
 import Inicio from "./Pantallas/Inicio";
-
+import Footer from "./Pantallas/Footer";
 import Cursos from "./Pantallas/Cursos";
 import Eventos from "./Pantallas/Eventos";
 import Usuario from "./Pantallas/Usuario";
@@ -19,6 +19,7 @@ import AdminFormCursos from "./admin/adminFormCursos";
 import AdminFormEmpleados from "./admin/adminFormEmpleados";
 import AdminFormEventos from "./admin/adminFormEventos";
 import AdminSeparacionCursos from "./admin/adminSeparacionCursos";
+import AdminFormEventosSeparaciones from "./admin/adminFormEventosSeparaciones";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,7 +33,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {    
-          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1'|| window.location.pathname === '/Inscripción'  || window.location.pathname === '/Calendario' 
+          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Calendario' 
             ? <Navbar /> 
             : <NavbarAdmin />
     
@@ -60,8 +61,11 @@ function App() {
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
         <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
-        
+        <Route exact path="/Admin/adminFormEventosSeparaciones" element={<AdminFormEventosSeparaciones/>}/>
+
        </Routes>
+
+       <Footer/>
       </BrowserRouter>
 
 

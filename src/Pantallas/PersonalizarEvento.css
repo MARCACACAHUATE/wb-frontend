@@ -7,9 +7,7 @@
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     color: #504d4d;
     padding: 20px 20px 200px;
-    text-align:justify;
-    
-    
+    text-align :justify;
 }
 
 .containerP{
@@ -40,8 +38,8 @@
 
  
   .buttonComp:hover {
-    color: rgb(255, 255, 255);
-    height: 48px;
+    color: black;
+    height: 46px;
     transition : .5s
 
   }
@@ -90,15 +88,23 @@ margin-top: 100px;
 }
 
 .contenedor{
-    width: 1000px;
+    width: 900px;
     border-radius: 30px;
     padding: 40px;
     position: relative;
-    left:250px;
+    left:50px;
     background-color: white;
 }
 
 .pregunta{
     padding: 5px;
     margin: 5px;
+}
+
+.imgEvento{
+    position: absolute;
+    right: 40px;
+    top: 150px;
+    width: 30%;
+    border-radius: 30px;
 }

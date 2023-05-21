@@ -5,48 +5,53 @@ import EventosSeparacionesRow from '../componentes/eventosSeparacionesRow';
 
 const adminEventosSeparaciones = () => {
   const [isUpdate, setisUpdate] = useState(false);
-  const [isUpdate2, setisUpdate2] = useState(false);
-  const [EventosList, setEventosList] = useState([]);
   const [EventosSeparacionesList, setEventosSeparacionesList] = useState([]);
+  const [filterText, setFilterText] = useState('');
 
   useEffect(() => {
     getEventosSeparacionesList();
+    // getEventosList();
   }, [isUpdate]);
 
-  // useEffect(() => {
-  //   setEventoName();
-  // }, [isUpdate2]);
-
   const getEventosSeparacionesList = async() => {
-    const res = await reqqResapi.get('api/eventos',{params:{
+    const res = await reqqResapi.get('api/eventosseparacions',{params:{
       month:"mayo",
       year:"2023"
-    }}).then(res => {
+    }}).then(async res => {
 
-        if (res.data.error) {
-              console.log(res.data.error);
-        } else {
-              console.log(res.data.data);
-              // setEventosSeparacionesList(res.data.data);
-              // getEventosList();
-              let separaciones = [];
-              let indice = 0;
-
-              if (res.data.data) {
-                res.data.data.forEach(evento => {
-                    separaciones.push(evento.separacion);
-                    separaciones[indice].nombrePaquete = evento.nombrePaquete;
-                    indice++;         
+        const res2 = await reqqResapi.get('api/eventos').then(res2 => {
+                res.data.data.forEach((separacion,index) => {
+                  res2.data.data.forEach(eventos => {
+                    if (separacion.id_Evento===eventos.id) {
+                      res.data.data[index].nombrePaquete = eventos.nombrePaquete;
+                    }
+                  });                  
                 });
-                console.log(separaciones);
-                setEventosSeparacionesList(separaciones);
-              }
-
-              
-        }
-
+      });   
+      console.log(res.data.data);
+        setEventosSeparacionesList(res.data.data);                   
     });   
   }
+
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
+
+  const filteredData = EventosSeparacionesList.filter((item) => {
+    // Convierte las propiedades de texto a minúsculas para una comparación insensible a mayúsculas y minúsculas
+    const lowerCaseFilterText = filterText.toLowerCase();
+
+    // Verifica si alguna de las propiedades del objeto coincide con el texto filtrado
+    return (
+      item.firstName.toLowerCase().includes(lowerCaseFilterText) ||
+      item.lastName.toLowerCase().includes(lowerCaseFilterText) ||
+      item.telefono.toLowerCase().includes(lowerCaseFilterText) ||
+      item.email.toLowerCase().includes(lowerCaseFilterText) ||
+      item.calle.toLowerCase().includes(lowerCaseFilterText) ||
+      item.colonia.toLowerCase().includes(lowerCaseFilterText) ||
+      item.nombrePaquete.toLowerCase().includes(lowerCaseFilterText)
+    );
+  });
 
   return (
     <div className={styles.inicio}>
@@ -59,7 +64,7 @@ const adminEventosSeparaciones = () => {
                 <h5 className="card-title">
                 Separaciones de Eventos{" "}
                   <span className="text-muted fw-normal ms-2">
-                    (#20 Separaciones de Eventos)
+                    (#{EventosSeparacionesList.length} Separaciones de Eventos)
                   </span>
                 </h5>
               </div>
@@ -72,6 +77,8 @@ const adminEventosSeparaciones = () => {
                     type="search"
                     placeholder="Buscar"
                     aria-label="Search"
+                    value={filterText}
+                    onChange={handleFilterChange}
                   />
                   <button
                     className="btn btn-outline-dark my-2 my-sm-0"
@@ -104,7 +111,7 @@ const adminEventosSeparaciones = () => {
                     </thead>
                     <tbody>
                         {
-                          EventosSeparacionesList?.map(separacion => (
+                          filteredData?.map(separacion => (
                               <EventosSeparacionesRow key={separacion.id} separacion={separacion} update={isUpdate} setUpdate={setisUpdate}/>
                           ))                     
                         }
@@ -117,7 +124,7 @@ const adminEventosSeparaciones = () => {
           <div className="row g-0 align-items-center pb-4">
             <div className="col-sm-6">
               <div>
-                <p className="mb-sm-0">Mostrando #20 Separaciones de Eventos</p>
+                <p className="mb-sm-0">Mostrando #{EventosSeparacionesList.length} Separaciones de Eventos</p>
               </div>
             </div>
             <div className="col-sm-6"></div>

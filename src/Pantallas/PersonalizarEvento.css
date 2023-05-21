@@ -87,3 +87,17 @@ margin-top: 100px;
     transition: .5s;
     
 }
+
+.contenedor{
+    width: 1000px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    left:250px;
+    background-color: white;
+}
+
+.pregunta{
+    padding: 5px;
+    margin: 5px;
+}

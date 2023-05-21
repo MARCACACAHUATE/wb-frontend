@@ -3,6 +3,8 @@ import Select from 'react-select'
 import makeAnimated from "react-select/animated"; // Importa desde la ruta correcta
 import { dataE } from "./DatosEventos.js";
 import "./PersonalizarEvento.css";
+import { NavLink } from 'react-router-dom';
+import styles from './PersonalizarE.css';
 
 const ListaPer = () => {
   return (
@@ -68,7 +70,8 @@ const ListaPer = () => {
       </div>
       
     </div>
-    <button className="buttonComp">Comprar</button>
+    <NavLink to="/Calendario"smooth
+                    duration={500} className={styles.callToAction} >Comprar</NavLink>&nbsp;
     </div>
     
     </>

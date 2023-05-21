@@ -1,9 +1,6 @@
 import React from 'react'
 import styles from './Cursos.module.css';
 import './slider.css'
-import images from '../Hooks/images'; 
-import {motion} from 'framer-motion'
-import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 
 import c1 from '../img/cursof1.jpg'
@@ -38,7 +35,7 @@ const Cursos = () => {
         <h3 className={styles.resaltar}>¿Qué aprenderás?</h3>
         <div className={styles.lista}>
         
-        <ul className='c'> 
+        <ul className={styles.temas}> 
           <li className={styles.tabla}>Armado de Estructuras con poca inversión</li>
           <li className={styles.tabla}>Enlonado y fundas para estructuras</li>
           <li className={styles.tabla}>Montaje de Arcos de entrada</li>

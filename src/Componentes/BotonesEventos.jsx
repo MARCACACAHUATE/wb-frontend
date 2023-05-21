@@ -5,15 +5,18 @@ import { Link } from 'react-router-dom';
 const ButtonsE =({paquete})=>{
     return  (
      <section className="botonesE">
-       <ul className='list'>
-         <img src={paquete.imageUrl} alt={paquete.decoration} width={100} />
+       <ul className='listE'>
+         <img className='imgE'src={paquete.imageUrl} alt={paquete.decoration} />
          <li className='deco'><b> Decoración:</b> {paquete.decoration}</li>
          <li className='include'><b>Incluye: </b> <ul className='listI'>
+
                {paquete.includes.map((item, index) => (
                  <li key={index}>{item}</li>
                ))}
              </ul> </li>
+             <li className='precio'><b> Precio:</b> {paquete.price}</li>
          <li > 
+
          <div className='customButton'>
           <Link  key={paquete.decoration} to= {`/Eventos/${paquete.decoration}`}>{'Siguiente'}</Link> 
           </div>

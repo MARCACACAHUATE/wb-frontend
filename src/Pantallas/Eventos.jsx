@@ -8,7 +8,7 @@ const Eventos = () => {
  
   return (
     <>
-    <h1 className='titulo'>Eventos/Servicios</h1>
+    <h1 className='tituloE'>Eventos/Servicios</h1>
     <ul>
     {data.map(paquete =>(<ButtonsE key ={paquete.id} paquete ={paquete}/> )
     )}

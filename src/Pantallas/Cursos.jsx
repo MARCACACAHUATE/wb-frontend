@@ -59,7 +59,7 @@ const Cursos = () => {
       <div id={styles.secundario}>
 
         <h2 className={styles.subtitulo}>Curso de burbujas con helio</h2>
-        <p>La decoración con burbujas de herlio es lo último en tendencia. Aquí aprenderás todo sobre el proceso de realización de las burbujas con Helio, así como su valoración en el mercado. </p>
+        <p>La decoración con burbujas de helio es lo último en tendencia. Aquí aprenderás todo sobre el proceso de realización de las burbujas con Helio, así como su valoración en el mercado. </p>
         <img src={c4} alt="" className={styles.imagen2} />
         
       </div>

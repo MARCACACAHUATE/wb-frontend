@@ -14,7 +14,7 @@ const Incursos = () => {
       <div className={styles.titleContainer}>
       <h1 className={styles.titulo}>Cursos de decoración con globos</h1>
       <p>¿Quieres aprender a crear tus propias decoraciones?
-      ¡No busques mas, nosotros te enseñamos!, da clic en el botón y descubre nuestros cursos disponibles.</p>
+      ¡No busques más, nosotros te enseñamos!, da clic en el botón y descubre nuestros cursos disponibles.</p>
       <img src="" alt="" />
 
       <div className={styles.ctaContainer}>

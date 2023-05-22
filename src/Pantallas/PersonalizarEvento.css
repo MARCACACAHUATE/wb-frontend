@@ -88,7 +88,7 @@ margin-top: 100px;
 }
 
 .contenedor{
-    width: 900px;
+    width: 80%;
     border-radius: 30px;
     padding: 40px;
     position: relative;
@@ -108,3 +108,24 @@ margin-top: 100px;
     width: 30%;
     border-radius: 30px;
 }
+
+.pago{
+    justify-content: space-around;
+}
+
+.recibo-container {
+    padding: 20px;
+  }
+
+  .recibo-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .recibo-label {
+    font-weight: bold;
+  }
+
+  .recibo-separacion {
+    margin-top: 30px;
+  }

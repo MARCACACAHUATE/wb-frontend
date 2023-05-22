@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { formatCurrency } from './../Hooks/currencyUtils';
 import c1 from "../img/CursoGuadalajara.jpg";
 
 
 const ButtonsE =({paquete})=>{
+  const navigate = useNavigate();
+
+  const separarEvento = async (paquete) => {
+    // history.push('/Admin/adminFormEventos', { param: evento });
+    navigate("/Eventos/Separacion", {
+        state: { evento: paquete },
+      })
+  };
+
     return  (
      <section className="botonesE">
        <ul className='list'>
@@ -24,9 +33,8 @@ const ButtonsE =({paquete})=>{
              </ul> </li>
              
          <li > 
-
-         <div className='customButton'>
-          <Link  key={paquete.decoration} to= {`/Eventos/${paquete.decoration}`}>{'Siguiente'}</Link> 
+         <div className='customButton' onClick={()=>separarEvento(paquete)}>
+          Siguiente
           </div>
           </li>
        </ul>

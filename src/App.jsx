@@ -10,6 +10,7 @@ import ListaPer from './Pantallas/PersonalizarE';
 import Steps from "./Pantallas/Steps";
 import Calendario from "./Pantallas/Calendario";
 import StepsE from "./Pantallas/StepsE";
+import Pago from "./Pantallas/Pago";
 import Admin from "./admin/adminHome";
 import AdminCursos from "./admin/adminCursos";
 import AdminEmpleados from "./admin/adminEmpleados";
@@ -33,7 +34,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {    
-          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Inscripcion' || window.location.pathname === '/Calendario' 
+          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Inscripcion' || window.location.pathname === '/Calendario' || window.location.pathname === '/Eventos/Separacion' || window.location.pathname === '/Eventos/Pago'
             ? <Navbar /> 
             : <NavbarAdmin />
     
@@ -44,7 +45,8 @@ function App() {
         <Route exact path="/Inicio" element={<Inicio/>}/>
         <Route exact path="/Cursos" element={<Cursos/>}/>
         <Route exact path="/Eventos" element={<Eventos/>}/>
-        <Route exact path="/Eventos/:decoration" element={<ListaPer/>}/>
+        <Route exact path="/Eventos/Separacion" element={<ListaPer/>}/>
+        <Route exact path="/Eventos/Pago" element={<Pago/>}/>
         <Route exact path="/Usuario" element={<Usuario/>}/>
         <Route exact path="/Slider1" element={<Slider1/>}/>
         <Route exact path="/Inscripción" element={<Steps/>}/>

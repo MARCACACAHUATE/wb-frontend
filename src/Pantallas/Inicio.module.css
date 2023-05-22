@@ -1,23 +1,28 @@
 .inicio {
-   
     padding: 20px 20px 200px;
     height:100%;
     width: 100%;
     overflow: hidden;
-   
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     color: #504d4d;
     padding: 20px 20px 200px;
     text-align: center;
-    
 }
+
 #principal{
+    
     display: flex;
-    float: left;
-    width: 900px;
+    width: 500px;
     margin: 40px;
     font-size: 25px;
 }
+
+@media screen and (max-width:800px){
+    #cont1{
+        flex-direction: column;
+    }
+}
+
 #secundario{
     display: flex;
     float:right;
@@ -27,8 +32,8 @@
 
 #tercero{
     display: flex;
-    float: right;
-    width: 900px;
+    text-align: center;
+    width: 500px;
     margin: 40px;
     font-size: 25px;
 }
@@ -42,10 +47,6 @@
     display: flex;
 }
 
-.slider{
-   text-align: right;
-   float: left;
-}
 .titleContainer {
     padding-top: 20px;
     
@@ -85,9 +86,7 @@
 }
 
 .titleContainer2 {
-    padding-top: 10px;
-    padding-right: 20px;
-    
+    padding-top: 20px;
 }
 .ctaContainer2{
     padding-top: 20px;
@@ -104,4 +103,8 @@
     color:#f91bb6;
     font-weight: 700;
     font-size: 60px;
+  }
+
+  .slider{
+   
   }

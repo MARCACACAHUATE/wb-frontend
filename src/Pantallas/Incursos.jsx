@@ -9,18 +9,19 @@ import { NavLink } from 'react-router-dom';
 const Incursos = () => {
   return (
     <div className={styles.inicio}>
+      <div id={styles.contgeneral}>
       <div id={styles.cont1}>
       <div id={styles.principal}>
       <div className={styles.titleContainer}>
       <h1 className={styles.titulo}>Cursos de decoración con globos</h1>
       <p>¿Quieres aprender a crear tus propias decoraciones?
-      ¡No busques mas, nosotros te enseñamos!, da clic en el botón y descubre nuestros cursos disponibles.</p>
+      ¡No busques más, nosotros te enseñamos!, da clic en el botón y descubre nuestros cursos disponibles.</p>
       <img src="" alt="" />
 
       <div className={styles.ctaContainer}>
       <NavLink to="/Cursos"
                     smooth
-                    duration={500} className={styles.callToAction}>¡Comenzar a aprender!</NavLink>&nbsp;
+                    duration={500} className={styles.callToAction}>Comenzar a aprender</NavLink>&nbsp;
       </div>
       </div>
 
@@ -60,7 +61,7 @@ const Incursos = () => {
 
       
 
-    
+      </div>
 
     </div>
   )

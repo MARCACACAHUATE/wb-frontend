@@ -93,6 +93,7 @@ img{
     color: #000000;
     border-radius: 25px;
     text-decoration: none;
+    cursor: pointer;
     
   }
   
@@ -100,7 +101,6 @@ img{
     color: #ffffff;
     text-decoration: none;
     height: 25px;
-
   }
   
   .customButton a:hover {

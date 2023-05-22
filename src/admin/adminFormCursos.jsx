@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { createBrowserHistory } from 'history';
 import logo from './../img/logo1.png'
 import styles from "./../Pantallas/Inicio.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -6,180 +7,251 @@ import { useForm } from "react-hook-form";
 import { reqqResapi } from "../api/reqRes";
 
 
-const adminFormCursos = () => {
+const CursoForm = () => {
+  const navigate = useNavigate();  // Obtener la función de navegación
 
-  const { state } = useLocation();
- 
-  let curso = {};
+  const [curso, setCurso] = useState({
+    Nombre: '',
+    Tematica: '',
+    Detalle: '',
+    FechaInicio: '',
+    FechaFin: '',
+    CostoReservacion: '',
+    CostoTotal: '',
+    Calle: '',
+    Numero: '',
+    Municipio: '',
+    EstadoCursoName: '' 
+  });
 
-  if (state!=undefined) {
-    curso = state.curso;
-    console.log(curso);
-    
-  }
+  const [estadoCursos, setEstadoCursos] = useState([
+    { id: '1', nombre: '' },
+    { id: '2', nombre: 'Nuevo León' },  
+    { id: '3', nombre: 'Otro estado' }
+  ]);
 
-  const navigate = useNavigate();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'FechaInicio' || name === 'FechaFin') {
+      const date = new Date(value);
+      const utcDate = new Date(date.toISOString()); // Convertir a UTC
+      const formattedDate = utcDate.toISOString().slice(0, 16); // Formato yyyy-MM-ddThh:mm
+      setCurso((prevCurso) => ({ ...prevCurso, [name]: formattedDate }));
 
-  const { register, handleSubmit } = useForm();
+      } else if (name === 'EstadoCursoName') {
+      const estadoSeleccionado = estadoCursos.find((estado) => estado.nombre === value);
+      if (estadoSeleccionado) {
+        setCurso((prevCurso) => ({ ...prevCurso, [name]: estadoSeleccionado.nombre }));
+      } else {
+        setCurso((prevCurso) => ({ ...prevCurso, [name]: '' }));
+      } 
 
-  const onSubmit = (data) => {
-
-    if (state!=undefined) {
-      ModifyEvento(data);
-    }else{
-      saveEvento(data);
+      } else {
+      setCurso((prevCurso) => ({ ...prevCurso, [name]: value }));
     }
   };
 
-  const saveEvento = async (Jsonsend) => {
-
-    console.log(Jsonsend);
-
-    //llamado al api promesa y se le asigna la interfaz
-    const resp = await reqqResapi.post("api/cursos/",Jsonsend).then((res) => {
-      if (res.data.error) {
-        alert(res.data.message);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Acciones para registrar el curso en la base de datos
+    try {
+      // Realizar la solicitud POST al backend para crear el curso
+      console.log(curso);
+      const response = await reqqResapi.post('api/Cursos/', curso);
+  
+      if (response.ok) {
+        // El curso se ha creado correctamente
+        console.log('Curso creado:', curso);
+  
+        // Redireccionamos a la interfaz adminCursos
+        navigate('/admin/adminCursos');
       } else {
-        alert(res.data.message);
-        navigate("/Admin/adminCursos");
+        // Hubo un error al crear el curso
+        console.error('Error al crear el curso:', response.status);
+        // No se por que se va a este apartado pero envía la solicitud al post bien
+        navigate('/admin/adminCursos');
       }
+    } catch (error) {
+      console.error('Error al crear el curso:', error);
+    }
+
+    console.log(curso);
+    setCurso({
+      Nombre: '',
+      Tematica: '',
+      Detalle: '',
+      FechaInicio: '',
+      FechaFin: '',
+      CostoReservacion: '',
+      CostoTotal: '',
+      Calle: '',
+      Numero: '',
+      Municipio: '',
+      EstadoCursoName: ''
     });
+
+    // Redireccionamos a la interfaz adminCursos
+    navigate('/admin/adminCursos');
+
   };
-
-  const ModifyEvento = async (Jsonsend) => {
-
-    console.log(Jsonsend);
-
-    //llamado al api promesa y se le asigna la interfaz
-    const resp = await reqqResapi.put("api/eventos/"+curso.IdCursos,Jsonsend).then((res) => {
-      if (res.data.error) {
-        alert(res.data.message);
-      } else {
-        alert(res.data.message);
-        navigate("/Admin/adminCursos");
-      }
-    });
-  };
-
 
   return (
-    <div className={styles.inicio}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <label htmlFor="Nombre" style={{ marginBottom: '10px' }}>
+        Nombre del curso:
+      </label>
+      <input
+        type="text"
+        id="Nombre"
+        name="Nombre"
+        value={curso.Nombre}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
 
-        <div className="container contact">
-          <form onSubmit={handleSubmit(onSubmit)} className="row">
-            <div className="col-md-3">
-              <div className="contact-info">
-                <img src={logo} alt="Logo"/>
-                <h2>Cursos</h2>
-              </div>
-            </div>
-            <div className="col-md-9">
-              <div className="contact-form">
-                <div className="form-group form-cont form-cont">
-                  <label className="control-label col-sm-6 label" for="fname">Nombre del curso:</label>
-                  <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre del curso" name="fname" {...register("nombreCurso")} defaultValue={curso.Nombre} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="lname">Temática:</label>
-                  <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la temática" name="lname" {...register("tematica")} defaultValue={curso.Tematica} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="email">Detalles:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="email" placeholder="Ingresa los detalle " name="lname" {...register("detalle")} defaultValue={curso.Detalle} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="email">Cupo Máximo:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="email" placeholder="Ingresa una cantidad de personas" name="lname" {...register("cupo")} defaultValue={curso.Cupo} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Fecha inicio:</label>
-                  <div className="col-sm-10">
-                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaInicio")} defaultValue={curso.fechaInicio} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Fecha fin:</label>
-                  <div className="col-sm-10">
-                  <input type="date" className="form-control" id="lname" name="lname" {...register("fechaFin")} defaultValue={curso.fechaFin} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Costo de reservación:</label>
-                  <div className="col-sm-10">
-                  <input type="number" className="form-control" id="lname" placeholder="Ingresa el costo de reservación" name="lname" {...register("CostoReservacion")} defaultValue={curso.CostoReservacion} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Costo de total:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el costo de total" name="lname" {...register("CostoTotal")} defaultValue={curso.CostoTotal} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Calle:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa la calle" name="lname" {...register("Calle")} defaultValue={curso.Calle} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Número:</label>
-                  <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el número" name="lname" {...register("Numero")} defaultValue={curso.Numero} disabled={sessionStorage.getItem('role')!="Admin"} required/>
-                  </div>
-                </div>
-                <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Municipio:</label>
-                  <div className="col-sm-10">
-                  <select className='form-control' {...register("id_Municipio")}>
-                    <option value="1" selected={curso.id_Municipio=="1"}>Monterrey</option>
-                    <option value="2" selected={curso.id_Municipio=="2"}>San Nicolas</option>
-                    <option value="3" selected={curso.id_Municipio=="3"}>Gudalaupe</option>
-                  </select>
-                  </div>
-                </div>
-                <div className="form-group form-cont">        
-                  <div className="col-sm-offset-2 col-sm-10">
-                  <button type="submit" className="btn btn-default">Crear Curso</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+      <label htmlFor="Tematica" style={{ marginBottom: '10px' }}>
+        Temática del curso:
+      </label>
+      <input
+        type="text"
+        id="Tematica"
+        name="Tematica"
+        value={curso.Tematica}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </div>
-  )
-}
-export default adminFormCursos
+      <label htmlFor="Detalle" style={{ marginBottom: '10px' }}>
+        Detalle del curso:
+      </label>
+      <textarea
+        id="Detalle"
+        name="Detalle"
+        value={curso.Detalle}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      ></textarea>
 
+      <label htmlFor="FechaInicio" style={{ marginBottom: '10px' }}>
+      Fecha y hora de inicio del curso:
+      </label>
+      <input
+        type="datetime-local"
+        id="FechaInicio"
+        name="FechaInicio"
+        value={curso.FechaInicio}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+    />
+
+    <label htmlFor="FechaFin" style={{ marginBottom: '10px' }}>
+      Fecha y hora de finalización del curso:
+    </label>
+      <input
+        type="datetime-local"
+        id="FechaFin"
+        name="FechaFin"
+        value={curso.FechaFin}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+    />
+
+      <label htmlFor="CostoReservacion" style={{ marginBottom: '10px' }}>
+        Costo para reservar el curso:
+      </label>
+      <input
+        type="text"
+        id="CostoReservacion"
+        name="CostoReservacion"
+        pattern="[0-9]+"
+        value={curso.CostoReservacion}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
+
+      <label htmlFor="CostoTotal" style={{ marginBottom: '10px' }}>
+        Costo total del curso:
+      </label>
+      <input
+        type="text"
+        id="CostoTotal"
+        name="CostoTotal"
+        pattern="[0-9]+"
+        value={curso.CostoTotal}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
+
+      <label htmlFor="Calle" style={{ marginBottom: '10px' }}>
+        Calle donde se llevará a cabo el curso:
+      </label>
+      <input
+        type="text"
+        id="Calle"
+        name="Calle"
+        value={curso.Calle}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
+
+      <label htmlFor="Numero" style={{ marginBottom: '10px' }}>
+        Número donde se llevará a cabo el curso:
+      </label>
+      <input
+        type="text"
+        id="Numero"
+        name="Numero"
+        pattern="[0-9]+"
+        value={curso.Numero}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
+
+      <label htmlFor="Municipio" style={{ marginBottom: '10px' }}>
+        Municipio donde se llevará a cabo el curso:
+      </label>
+      <input
+        type="text"
+        id="Municipio"
+        name="Municipio"
+        value={curso.Municipio}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      />
+
+      <label htmlFor="EstadoCursoName" style={{ marginBottom: '10px' }}>
+        Estado donde se llevará a cabo el curso:
+      </label>
+      <select
+        id="EstadoCursoName"
+        name="EstadoCursoName"
+        value={curso.EstadoCursoName}
+        onChange={handleChange}
+        required
+        style={{ marginBottom: '20px', padding: '5px', width: '300px' }}
+      >
+        {estadoCursos.map((estado, index) => (
+          <option key={index} value={estado.nombre}>
+            {estado.nombre}
+          </option>
+        ))}
+      </select>
+
+      <button type="submit" style={{ backgroundColor: 'purple', color: 'white', padding: '10px 20px' }}>
+        Enviar
+      </button>
+    </form>
+  );
+};
+
+export default CursoForm;

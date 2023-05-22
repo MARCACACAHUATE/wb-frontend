@@ -1,8 +1,17 @@
+.tituloE{
+    padding-top: 20px;
+    font-size: 50px;
+    color: #fc2ecc;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
 .even{
     overflow: hidden;
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     
 }
+
 .cuadros{
     display: flex;
     flex-direction: row;
@@ -18,24 +27,65 @@
     margin-bottom: 90px;
     padding-top: 20px;
 }
+.imgE{
+    width:240px;
+    margin-top:20px;
+    margin-bottom:10px;
+    border-radius:15px;
+    align-items:right;
+    
+}
 .botonesE{
     
     background-color: white;
     border: 1px solid rgb(0, 0, 0);
-    width: 300px;
+    width: 325px;
     margin: none;
-    flex-direction:column-reverse;
-    margin-left: 50px; ;
+    float: left;
+    margin-left: 90px; ;
     margin-bottom: 30px;
     justify-content: center;
     border-radius: 15px;
-    }
-    .list{
+    border-color:white;
     
-        list-style : none;
-        margin-left: none;
-        text-align: left;    
     }
+.listE{
+    
+    list-style: none;
+    margin-left: none;
+    text-align: left;    
+
+    flex-direction:column-reverse;
+    margin-left: 10px; ;
+    margin-bottom: 30px;
+    justify-content: center;
+    border-radius: 15px;
+    border-color:white;
+    
+    }
+    
+    .img-container {
+        aspect-ratio: 16/9;
+        margin-left: -32px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      
+      .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .deco{
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        height: 52px;
+      }
+
 
     .img-container {
         aspect-ratio: 16/9;
@@ -60,30 +110,21 @@
       }
 
 
-.botonesE:hover {
-    box-shadow:
-    inset 
-          0 0  0 .5px rgb(114, 119, 111),
-          0.2em 0.2em .2em rgba(189, 187, 202, 0.815);
 
+.botonesE:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0.2, 0.5);
 }
 .buttonNext{
-    text-align: center;
-    
-    
+    text-align: center;    
         
 }
 
-img{
-    margin: auto;
-}
-.titulo{
-    text-align: center;
-    color: #504d4d;
-}
+
+
  
 .customButton {
     display:flex;
+    text-decoration: none;
     width: 100px;
     margin-left: 25%;
     margin-bottom: 5%;
@@ -109,7 +150,7 @@ img{
     transition: .5s;
 
   }
-
+  
   .include{
     height: 190px;
   }

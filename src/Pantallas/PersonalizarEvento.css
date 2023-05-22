@@ -7,7 +7,7 @@
     background: linear-gradient(90deg, #aae2ef, #efcdea, #f298fa);
     color: #504d4d;
     padding: 20px 20px 200px;
-    text-align:justify;
+    text-align :justify;
 }
 
 .containerP{
@@ -38,8 +38,9 @@
 
  
   .buttonComp:hover {
-    color: rgb(255, 255, 255);
-    height: 48px;
+    color: black;
+    height: 46px;
+    transition : .5s
 
   }
 .select{

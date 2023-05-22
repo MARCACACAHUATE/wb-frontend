@@ -31,6 +31,7 @@ const ButtonsE =({paquete})=>{
                  <li>Total: <strong>{formatCurrency(paquete.costo_total)}</strong></li>
                {/* ))} */}
              </ul> </li>
+             
          <li > 
          <div className='customButton' onClick={()=>separarEvento(paquete)}>
           Siguiente

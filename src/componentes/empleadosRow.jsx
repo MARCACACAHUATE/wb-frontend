@@ -63,7 +63,6 @@ const EmpleadosRow = ({empleado}) => {
         </svg>
         </button>
     </td>
-    <td className="adminrow">{empleado.id}</td>
       <td className="adminrow">{empleado.first_name}</td>
       <td className="adminrow">{empleado.last_name}</td>
       <td className="adminrow">{empleado.email}</td>

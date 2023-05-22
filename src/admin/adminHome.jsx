@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { NavLink,useNavigate } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
+import { formatCurrency } from './../Hooks/currencyUtils';
 
 import c1 from "../img/CursoGuadalajara.jpg";
 import c2 from "../img/CursoSanLuis.jpg";
@@ -81,9 +82,9 @@ const adminHome = () => {
                   <Typography variant="body2" color="textSecondary" component="p">
                     El evento ideal para tu "{evento.ocasion}".
                     ¡Ven y disfruta de nuestro servicio, vamos hasta tu {evento.ocasion} vamos hasta tu {evento.ocasion}!<br /><br />
-                    Costo de envío: $<strong>{evento.costoEnvioMaterial}</strong><br />
-                    Costo de reservación: $<strong>{evento.costo_reservacion}</strong><br />
-                    Costo total: $<strong>{evento.costo_total}</strong><br />
+                    Costo de envío: <strong>{formatCurrency(evento.costoEnvioMaterial)}</strong><br />
+                    Costo de reservación: <strong>{formatCurrency(evento.costo_reservacion)}</strong><br />
+                    Costo total: <strong>{formatCurrency(evento.costo_total)}</strong><br />
                     Estado: {evento.estado}
                   </Typography>
                 </CardContent>

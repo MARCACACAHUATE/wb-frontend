@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
+import { formatCurrency } from './../Hooks/currencyUtils';
 
 const EventosRow = ({evento,rol}) => {
 
@@ -70,11 +71,11 @@ const EventosRow = ({evento,rol}) => {
     <td className="adminrow">{evento.servicios}</td>
     <td className="adminrow">{evento.mobiliario}</td>
     <td className="adminrow">{evento.colorGlobos}</td>
-    <td className="adminrow">${evento.costoEnvioMaterial}</td>
-    <td className="adminrow">${evento.costo_reservacion}</td>
-    <td className="adminrow">${evento.costo_total}</td>
     <td className="adminrow">{evento.estado}</td>
     <td className="adminrow">{evento.id_Municipio==="1"? "Monterrey" : "San Nicolás"}</td>
+    <td className="adminrow moneda">{formatCurrency(evento.costoEnvioMaterial)}</td>
+    <td className="adminrow moneda">{formatCurrency(evento.costo_reservacion)}</td>
+    <td className="adminrow moneda"><strong>{formatCurrency(evento.costo_total)}</strong></td>
     </tr>
   );
 };

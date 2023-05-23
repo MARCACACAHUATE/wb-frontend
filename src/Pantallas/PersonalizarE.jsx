@@ -1,5 +1,5 @@
 import React from "react";
-import Select from 'react-select'
+import Select from "react-select"
 import makeAnimated from "react-select/animated"; // Importa desde la ruta correcta
 import { dataE } from "./DatosEventos.js";
 import "./PersonalizarEvento.css";

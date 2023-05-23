@@ -44,7 +44,7 @@ const FirstStep = () => {
       const response = await reqqResapi.post('api/CursoSeparacion', updatedUserData);
       console.log(response.data);
       // Cualquier acción adicional después de guardar los datos en la base de datos
-      setStep(2); // Pasar al siguiente paso
+      setStep(3); // Pasar al siguiente paso
     } catch (error) {
       console.error("Error saving user data:", error);
     }

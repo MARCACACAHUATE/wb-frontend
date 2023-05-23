@@ -19,7 +19,7 @@ const Incursos = () => {
       <img src="" alt="" />
 
       <div className={styles.ctaContainer}>
-      <NavLink to="/Cursos"
+      <NavLink to="/Calendario"
                     smooth
                     duration={500} className={styles.callToAction}>Comenzar a aprender</NavLink>&nbsp;
       </div>

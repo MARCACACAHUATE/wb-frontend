@@ -14,8 +14,6 @@ const Steps = () => {
     switch(step){
       case 1 :
         return <FirstStep/>
-        case 2 :
-          return <SecondStep/>
           case 3 :
             return <ThirdStep/>
             

@@ -36,7 +36,7 @@ const Navbar = () => {
     },
     {
         id:2,
-        link:"Cursos",
+        link:"Calendario",
     },
     {
         id:3,

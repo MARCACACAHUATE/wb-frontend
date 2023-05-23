@@ -52,6 +52,14 @@ const EventosSeparacionesRow = ({separacion}) => {
       })
   };
 
+  const seeEvento = async (separacion) => {
+    // history.push('/Admin/adminFormEventos', { param: evento });
+    console.log(separacion);
+    navigate("/Admin/adminFormEventos", {
+        state: { evento: separacion.evento },
+      })
+  };
+
   const fechaformat =(fechaOriginal) =>{
     const fechaFormateada = moment(fechaOriginal).format('YYYY/MM/DD');
     return fechaFormateada
@@ -93,11 +101,21 @@ const EventosSeparacionesRow = ({separacion}) => {
     </td>
     <td className="adminrow">{fechaformat(separacion.fecha)}</td>
     <td className="adminrow">{separacion.horaEvento}</td>
-    <td className="adminrow">{separacion.nombrePaquete}</td>
+    <td className="adminrow seeevento" onClick={()=>seeEvento(separacion)}>{separacion.nombrePaquete}</td>
     <td className="adminrow">{separacion.firstName+" "+separacion.lastName}</td>
     <td className="adminrow">{separacion.telefono}</td>
     <td className="adminrow">{separacion.email}</td>
     <td className="adminrow">{separacion.colonia+" "+separacion.calle+"  #"+separacion.numero}</td>
+    {
+      separacion.confirmaciónPago === false
+      ?(<td className="adminrow pagado">
+          Pagado
+        </td>)
+      :(<td className="adminrow pendiente">
+          Pendiente
+        </td>)
+    }
+    
 
     </tr>
   );

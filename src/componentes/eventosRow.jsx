@@ -31,6 +31,13 @@ const EventosRow = ({evento,rol}) => {
       })
   };
 
+  const seeSeparacion = async (separacion) => {
+    // history.push('/Admin/adminFormEventos', { param: evento });
+    navigate("/Admin/adminFormEventosSeparaciones", {
+      state: { separacion: separacion },
+    })
+  };
+
   return (
     <tr>
     <td className="rowactions">
@@ -76,6 +83,12 @@ const EventosRow = ({evento,rol}) => {
     <td className="adminrow moneda">{formatCurrency(evento.costoEnvioMaterial)}</td>
     <td className="adminrow moneda">{formatCurrency(evento.costo_reservacion)}</td>
     <td className="adminrow moneda"><strong>{formatCurrency(evento.costo_total)}</strong></td>
+    {
+      evento.separacion === null || undefined
+      ?(<td className="adminrow"><strong>No separado</strong></td>)
+      :(<td className="adminrow seeevento" onClick={()=>seeSeparacion(evento.separacion)}><strong>Separado</strong></td>)
+    }
+    
     </tr>
   );
 };

@@ -112,9 +112,10 @@ const adminEventos = () => {
                         <th scope="col" className="admincol">Color-Globos</th>
                         <th scope="col" className="admincol">Estado</th>
                         <th scope="col" className="admincol">Municipio</th>
-                        <th scope="col" className="admincol">Envio</th>
+                        <th scope="col" className="admincol">envío</th>
                         <th scope="col" className="admincol">Reservacion</th>
                         <th scope="col" className="admincol">Total</th>
+                        <th scope="col" className="admincol">Separación</th>
                       </tr>
                     </thead>
                     <tbody>

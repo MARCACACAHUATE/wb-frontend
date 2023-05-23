@@ -20,8 +20,11 @@ const Eventos = () => {
         console.log(res.data.error);
       } else {
         res.data.data.sort((a, b) => new Date(b.id) - new Date(a.id));
-        setEventosList(res.data.data);
-        console.log(res.data.data);
+
+        const arregloFiltrado = res.data.data.filter((elemento) => elemento.separacion === null);
+
+        setEventosList(arregloFiltrado);
+        console.log(arregloFiltrado);
       }
     });
   };

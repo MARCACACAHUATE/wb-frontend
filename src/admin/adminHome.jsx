@@ -41,7 +41,9 @@ const adminHome = () => {
               console.log(res.data.error);
         } else {
               let nuevo = res.data.data.slice(res.data.data.length - 4);
-              setEventosList(nuevo);
+              const arregloFiltrado = nuevo.filter((elemento) => elemento.separacion === null);
+
+              setEventosList(arregloFiltrado);
         }
 
     });   

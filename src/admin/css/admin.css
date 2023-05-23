@@ -205,3 +205,17 @@
     text-align: right;
     min-width: 120px;
 }
+
+.pendiente{
+    color: gray;
+}
+
+.pagado{
+    color: blue;
+}
+
+.seeevento{
+    cursor: pointer;
+    color: magenta;
+    font-weight: bold;
+}

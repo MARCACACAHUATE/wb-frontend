@@ -26,10 +26,11 @@ const FirstStep = () => {
     fetchCursos();
   }, []);
 
-  const handleCursoSelection = (event) => {
-    const cursoId = event.target.value;
-    setUserData({ ...userData, "IdCursos": cursoId });
-  };
+    const handleCursoSelection = (event) => {
+      const cursoId = event.target.value;
+      setUserData({ ...userData, "CursosIdCursos": cursoId });
+      console.log(userData)
+    };
 
   const saveUserData = async () => {
     try {
@@ -37,8 +38,7 @@ const FirstStep = () => {
         ...userData,
         Cantidad_personas_contratadas: parseInt(userData.Cantidad_personas_contratadas),
         Edad: parseInt(userData.Edad),
-        IdCursos: parseInt(userData.IdCursos),
-        Telefono: parseInt(userData.Telefono),
+        CursosIdCursos: (userData.CursosIdCursos),
       };
       console.log(updatedUserData);
       const response = await reqqResapi.post('api/CursoSeparacion', updatedUserData);

@@ -62,7 +62,7 @@ function App() {
         <Route exact path="/Admin/adminModificarCurso/:id" element={<AdminModificarCurso/>}/>
         <Route exact path="/Admin/adminFormEmpleados" element={<AdminFormEmpleados/>}/>
         <Route exact path="/Admin/adminFormEventos" element={<AdminFormEventos/>}/>
-        <Route exact path="/Admin/adminSeparacionCursos" element={<AdminSeparacionCursos/>}/>
+        <Route exact path="/Admin/adminSeparacionCursos/:id" element={<AdminSeparacionCursos/>}/>
         <Route exact path="/Admin/adminFormEventosSeparaciones" element={<AdminFormEventosSeparaciones/>}/>
 
        </Routes>

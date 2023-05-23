@@ -24,24 +24,44 @@ import AdminFormEventos from "./admin/adminFormEventos";
 import AdminSeparacionCursos from "./admin/adminSeparacionCursos";
 import AdminFormEventosSeparaciones from "./admin/adminFormEventosSeparaciones";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 function App() {
+  const allowedRoutes = [
+    '/',
+    '/Inicio',
+    '/Eventos/armatuEvento',
+    '/Cursos',
+    '/Eventos',
+    '/Usuario',
+    '/Slider1',
+    '/Inscripción',
+    '/Inscripcion',
+    '/Calendario',
+    '/Eventos/Separacion',
+    '/Eventos/Pago',
+  ];
 
   return (
     <div className="App">
       <BrowserRouter>
-      {    
-          window.location.pathname === '/' || window.location.pathname === '/Inicio'|| window.location.pathname === '/Eventos/armatuEvento' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Inscripcion' || window.location.pathname === '/Calendario' || window.location.pathname === '/Eventos/Separacion' || window.location.pathname === '/Eventos/Pago'
-            ? <Navbar /> 
-            : <NavbarAdmin />
-    
-      }
+        {/* {allowedRoutes.includes(window.location.pathname) ? <Navbar /> : <NavbarAdmin />} */}
       
+        <Routes>
+        {allowedRoutes.map((route) => (
+          <Route
+            key={route}
+            path={route}
+            element={<Navbar />}
+          />
+        ))}
+        <Route
+          path="*"
+          element={<NavbarAdmin />}
+        />
+      </Routes>
+
        <Routes>
         <Route exact path="/" element={<Inicio/>}/>
         <Route exact path="/Inicio" element={<Inicio/>}/>

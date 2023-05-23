@@ -104,6 +104,8 @@ const Pago = () => {
 
     console.log(separacion);
 
+    separacion.ConfirmacionPago = true;
+
     //llamado al api promesa y se le asigna la interfaz
     const resp = await reqqResapi.post("api/eventosseparacions/",separacion).then((res) => {
       if (res.data.error) {

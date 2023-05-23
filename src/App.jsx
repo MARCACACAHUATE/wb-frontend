@@ -11,6 +11,8 @@ import Steps from "./Pantallas/Steps";
 import Calendario from "./Pantallas/Calendario";
 import StepsE from "./Pantallas/StepsE";
 import Pago from "./Pantallas/Pago";
+import ArmatuEvento from "./Pantallas/armatuEvento"
+
 import Admin from "./admin/adminHome";
 import AdminCursos from "./admin/adminCursos";
 import AdminEmpleados from "./admin/adminEmpleados";
@@ -34,7 +36,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       {    
-          window.location.pathname === '/' || window.location.pathname === '/Inicio' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Inscripcion' || window.location.pathname === '/Calendario' || window.location.pathname === '/Eventos/Separacion' || window.location.pathname === '/Eventos/Pago'
+          window.location.pathname === '/' || window.location.pathname === '/Inicio'|| window.location.pathname === '/Eventos/armatuEvento' || window.location.pathname === '/Cursos' || window.location.pathname === '/Eventos' || window.location.pathname === '/Usuario' || window.location.pathname === '/Slider1' || window.location.pathname === '/Inscripción' || window.location.pathname === '/Inscripcion' || window.location.pathname === '/Calendario' || window.location.pathname === '/Eventos/Separacion' || window.location.pathname === '/Eventos/Pago'
             ? <Navbar /> 
             : <NavbarAdmin />
     
@@ -51,6 +53,7 @@ function App() {
         <Route exact path="/Slider1" element={<Slider1/>}/>
         <Route exact path="/Inscripción" element={<Steps/>}/>
         <Route exact path="/Calendario" element={<Calendario/>}/>
+        <Route exact path="/Eventos/armatuEvento" element={<ArmatuEvento/>}/>
 
         
         

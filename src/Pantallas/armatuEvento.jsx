@@ -172,7 +172,7 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                 </div>
                 <input type="hidden" className="form-control" id="lname2" placeholder="Estado del evento" name="lname2" {...register("Id")} defaultValue={"1"}  required/>
 
-                <h2>Recibo</h2>
+                <h2>Cotización</h2>
       <table className="table">
         <thead>
           <tr>

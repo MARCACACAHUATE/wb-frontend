@@ -27,7 +27,7 @@ const ButtonsE =({paquete})=>{
                  <li>{paquete.servicios}</li>
                  <li>{paquete.mobiliario}</li>
                  <li>Reservacion: {formatCurrency(paquete.costo_reservacion)}</li>
-                 <li>Envio: {formatCurrency(paquete.costoEnvioMaterial)}</li>
+                 <li>envío: {formatCurrency(paquete.costoEnvioMaterial)}</li>
                  <li>Total: <strong>{formatCurrency(paquete.costo_total)}</strong></li>
                {/* ))} */}
              </ul> </li>

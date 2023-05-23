@@ -24,6 +24,7 @@ const adminEventosSeparaciones = () => {
                   res2.data.data.forEach(eventos => {
                     if (separacion.id_Evento===eventos.id) {
                       res.data.data[index].nombrePaquete = eventos.nombrePaquete;
+                      res.data.data[index].evento = eventos;
                     }
                   });                  
                 });
@@ -63,9 +64,9 @@ const adminEventosSeparaciones = () => {
             <div className="col-md-6">
               <div className="mb-3">
                 <h5 className="card-title">
-                Separaciones de Eventos{" "}
+                separaciónes de Eventos{" "}
                   <span className="text-muted fw-normal ms-2">
-                    (#{EventosSeparacionesList.length} Separaciones de Eventos)
+                    (#{EventosSeparacionesList.length} separaciónes de Eventos)
                   </span>
                 </h5>
               </div>
@@ -105,9 +106,10 @@ const adminEventosSeparaciones = () => {
                         <th scope="col" className="admincol">Hora evento</th>
                         <th scope="col" className="admincol">Nombre del paquete</th>
                         <th scope="col" className="admincol">Nombre del cliente</th>
-                        <th scope="col" className="admincol">telefono</th>
+                        <th scope="col" className="admincol">Teléfono</th>
                         <th scope="col" className="admincol">Email</th>
                         <th scope="col" className="admincol">Direccion</th>
+                        <th scope="col" className="admincol">Estatus</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -125,7 +127,7 @@ const adminEventosSeparaciones = () => {
           <div className="row g-0 align-items-center pb-4">
             <div className="col-sm-6">
               <div>
-                <p className="mb-sm-0">Mostrando #{EventosSeparacionesList.length} Separaciones de Eventos</p>
+                <p className="mb-sm-0">Mostrando #{EventosSeparacionesList.length} separaciónes de Eventos</p>
               </div>
             </div>
             <div className="col-sm-6"></div>

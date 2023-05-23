@@ -30,7 +30,6 @@ const adminFormCursos = () => {
       ModifyEvento(data);
     }else{
       saveEvento(data);
-      // saveIMG(data);
     }
   };
 
@@ -43,24 +42,29 @@ const adminFormCursos = () => {
       if (res.data.error) {
         alert(res.data.message);
       } else {
+        console.log(res.data.data);
+        saveIMG(res.data.data.id,Jsonsend);
         alert(res.data.message);
-        navigate("/Admin/adminEventos");
       }
     });
   };
 
-  const saveIMG = async (Jsonsend) => {
+  const saveIMG = async (id,data) => {
     try {
-      const formData = new FormData();
-      formData.append('image', data.image[0]);
 
-      console.log(formData);
-      const response = await axios.post('http://localhost:5000/upload', Jsonsend, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      const formData = new FormData();
+      formData.append("Evento_id", id);
+      formData.append("File", data.image[0]);
+      
+      const resp = await reqqResapi.post("api/eventos/upload",formData).then((res) => {
+        if (res.data.error) {
+          alert(res.data.message);
+        } else {
+          console.log(res);
+          navigate("/Admin/adminEventos");
+        }
       });
-      console.log(response.data);
+
     } catch (error) {
       console.error(error);
     }
@@ -74,8 +78,8 @@ const adminFormCursos = () => {
       if (res.data.error) {
         alert(res.data.message);
       } else {
+        saveIMG(res.data.data.id,data);
         alert(res.data.message);
-        navigate("/Admin/adminEventos");
       }
     });
   };
@@ -139,9 +143,9 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="costoEnvioMaterial">Costo de envio:</label>
+                  <label className="control-label col-sm-6 label" for="costoEnvioMaterial">Costo de envío:</label>
                   <div className="col-sm-10">
-                  <input type="number" className="form-control" id="costoEnvioMaterial" placeholder="Ingresa el costo de envio" name="costoEnvioMaterial" {...register("costoEnvioMaterial")} defaultValue={evento.costoEnvioMaterial} disabled={sessionStorage.getItem('role')!="Admin"} required/>
+                  <input type="number" className="form-control" id="costoEnvioMaterial" placeholder="Ingresa el costo de envío" name="costoEnvioMaterial" {...register("costoEnvioMaterial")} defaultValue={evento.costoEnvioMaterial} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">

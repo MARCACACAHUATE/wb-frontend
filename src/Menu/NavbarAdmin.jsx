@@ -42,7 +42,7 @@ const Navbar =()=>{
             ?(<h4><NavLink to="/Admin/adminEmpleados" className="nav-item nav-link" style={{color: "dark"}}>Usuarios</NavLink></h4>)
             :(<></>)
           }
-          <h4 onClick={()=>CerrarSesion()}><NavLink className="nav-item nav-link" style={{color: "dark"}}>Cerrar Sesión</NavLink></h4>
+          <h4 onClick={()=>CerrarSesion()}><NavLink className="nav-item nav-link" style={{color: "dark"}}>Cerrar sesión</NavLink></h4>
 
           </div>
         </div>

@@ -68,11 +68,11 @@ const ArmatuEvento = () => {
       if (res.data.error) {
         alert(res.data.message);
       } else {
-        alert(res.data.message);
+        alert("Evento creado con éxito");
         console.log(res.data.data);
-        navigate("/Eventos/Separacion", {
-            state: { evento: res.data.data },
-          })
+        // navigate("/Eventos/Separacion", {
+        //     state: { evento: res.data.data },
+        //   })
       }
     });
   };
@@ -114,7 +114,7 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                 <div className="form-group form-cont form-cont">
                   <label className="control-label col-sm-6 label" for="nombrePaquete">Nombre del paquete:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="nombrePaquete" placeholder="Ingresa el nombre del paquete" name="nombrePaquete" {...register("nombrePaquete")} required/>
+                  <input type="text" className="form-control" id="nombrePaquete" placeholder="Ingresa el nombre del paquete" name="nombrePaquete" {...register("nombrePaquete")} required maxlength="50"/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
@@ -141,19 +141,22 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                   <label className="control-label col-sm-6 label" for="mobiliario">Mobiliario:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("mobiliario")}>
-                    <option value="Mesas y sillas paquete chicho (20 personas)">Mesas y sillas paquete chicho (20 personas)</option>
+                    <option value="Mesas y sillas paquete chicho (20 personas)">Mesas y sillas paquete chico (20 personas)</option>
                     <option value="Mesas y sillas paquete mediano (50 personas)">Mesas y sillas paquete mediano (50 personas)</option>
                     <option value="Mesas y sillas paquete grande (100 personas)">Mesas y sillas paquete grande (100 personas)</option>
                   </select>
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de Globos:</label>
+                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de globos:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("colorGlobos")}>
                     <option value="Azul" selected={evento.colorGlobos=="Azul"}>Azul</option>
                     <option value="Rojo" selected={evento.colorGlobos=="Rojo"}>Rojo</option>
                     <option value="Verde" selected={evento.colorGlobos=="Verde"}>Verde</option>
+                    <option value="Verde" selected={evento.colorGlobos=="Rosa"}>Rosa</option>
+                    <option value="Verde" selected={evento.colorGlobos=="Negro"}>Negro</option>
+                    <option value="Verde" selected={evento.colorGlobos=="Blanco"}>Blanco</option>
                   </select>
                   </div>
                 </div>
@@ -204,7 +207,7 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                 <div className="form-group form-cont">        
                   <div className="col-sm-offset-10 col-sm-16">
                   <button type="submit" className="btn btn-default">
-                    Crear Evento
+                    Crear evento
                   </button>
                   </div>
                 </div>

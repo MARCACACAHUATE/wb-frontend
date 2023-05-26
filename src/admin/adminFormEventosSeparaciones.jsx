@@ -93,13 +93,13 @@ const AdminFormEventosSeparaciones = () => {
             <div className="col-md-9">
               <div className="contact-form">
               <div className="form-group form-cont form-cont">
-                  <label className="control-label col-sm-6 label" for="fname">Primer Nombre:</label>
+                  <label className="control-label col-sm-6 label" for="fname">Primer nombre:</label>
                   <div className="col-sm-10">          
                   <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre" name="fname" {...register("FirstName")} defaultValue={separacion.firstName} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="lname">Primer Apellido:</label>
+                  <label className="control-label col-sm-6 label" for="lname">Primer apellido:</label>
                   <div className="col-sm-10">          
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa el apellido" name="lname" {...register("LastName")} defaultValue={separacion.lastName} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
@@ -137,7 +137,7 @@ const AdminFormEventosSeparaciones = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Numero:</label>
+                  <label className="control-label col-sm-6 label" for="comment">Número:</label>
                   <div className="col-sm-10">
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa el numero del local" name="lname" {...register("numero")} defaultValue={separacion.numero} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
@@ -152,8 +152,8 @@ const AdminFormEventosSeparaciones = () => {
                   <div className="col-sm-offset-2 col-sm-10">
                   <button type="submit" className="btn btn-default" disabled={sessionStorage.getItem('role')!="Admin"}>
                     {state!=undefined
-                      ? "Modificar Separacion"
-                      : "Crear Evento"
+                      ? "Modificar separacion"
+                      : "Crear separacion"
                     }
                   </button>
                   </div>

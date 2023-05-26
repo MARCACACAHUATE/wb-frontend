@@ -102,13 +102,13 @@ const adminEventosSeparaciones = () => {
                         <th scope="col" className="admincol" style={{ width: "200px" }}>
                           Acciones
                         </th>
-                        <th scope="col" className="admincol">Fecha Evento</th>
+                        <th scope="col" className="admincol">Fecha evento</th>
                         <th scope="col" className="admincol">Hora evento</th>
                         <th scope="col" className="admincol">Nombre del paquete</th>
                         <th scope="col" className="admincol">Nombre del cliente</th>
                         <th scope="col" className="admincol">Teléfono</th>
                         <th scope="col" className="admincol">Email</th>
-                        <th scope="col" className="admincol">Direccion</th>
+                        <th scope="col" className="admincol">Dirección</th>
                         <th scope="col" className="admincol">Estatus</th>
                       </tr>
                     </thead>

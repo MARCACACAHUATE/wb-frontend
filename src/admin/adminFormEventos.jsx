@@ -44,7 +44,7 @@ const adminFormCursos = () => {
       } else {
         console.log(res.data.data);
         saveIMG(res.data.data.id,Jsonsend);
-        alert(res.data.message);
+        alert("Evento creado con éxito");
       }
     });
   };
@@ -94,8 +94,8 @@ const adminFormCursos = () => {
                 <img src={logo} alt="Logo"/>
                 <h2>
                 {state!=undefined
-                ? "Modificar Evento: " + evento.nombrePaquete
-                : "Agregar Evento"}
+                ? "Modificar evento: " + evento.nombrePaquete
+                : "Agregar evento"}
                 </h2>
               </div>
             </div>
@@ -108,7 +108,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont form-cont">
-                  <label className="control-label col-sm-6 label" for="image">Portada del paquiete:</label>
+                  <label className="control-label col-sm-6 label" for="image">Portada del paquete:</label>
                   <div className="col-sm-10">          
                   <input type="file" className="form-control" id="image" placeholder="Sube la imagen del paquete" name="nombrePaquete" {...register("image")} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
@@ -133,7 +133,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de Globos:</label>
+                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de globos:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("colorGlobos")} disabled={sessionStorage.getItem('role')!="Admin"}>
                     <option value="Azul" selected={evento.colorGlobos=="Azul"}>Azul</option>
@@ -178,8 +178,8 @@ const adminFormCursos = () => {
                   <div className="col-sm-offset-2 col-sm-10">
                   <button type="submit" className="btn btn-default" disabled={sessionStorage.getItem('role')!="Admin"}>
                     {state!=undefined
-                      ? "Modificar Evento"
-                      : "Crear Evento"
+                      ? "Modificar evento"
+                      : "Crear evento"
                     }
                   </button>
                   </div>

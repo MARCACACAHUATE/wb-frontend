@@ -65,7 +65,7 @@ const handleFilterChange = (event) => {
                 <h5 className="card-title">
                   Usuarios{" "}
                   <span className="text-muted fw-normal ms-2">
-                    (#{UserList.length} Usuarios)
+                    (#{UserList.length} {UserList.length>1 ? "Usuarios" : "Usuario"})
                   </span>
                 </h5>
               </div>
@@ -91,7 +91,7 @@ const handleFilterChange = (event) => {
                 <div>
                   <NavLink to="/Admin/adminFormEmpleados">
                     <button className="btn btn-outline-dark">
-                      + Agregar Usuario
+                      + Agregar usuario
                     </button>
                   </NavLink>
                 </div>
@@ -109,8 +109,8 @@ const handleFilterChange = (event) => {
                           Acciones
                         </th>
                         {/* <th scope="col" className="admincol">Usuario ID</th> */}
-                        <th scope="col" className="admincol">Primer Nombre</th>
-                        <th scope="col" className="admincol">Primer Apellido</th>
+                        <th scope="col" className="admincol">Primer nombre</th>
+                        <th scope="col" className="admincol">Primer apellido</th>
                         <th scope="col" className="admincol">Email</th>
                         <th scope="col" className="admincol">Teléfono</th>
                         <th scope="col" className="admincol">Calle</th>

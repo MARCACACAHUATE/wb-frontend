@@ -169,9 +169,7 @@ const Pago = () => {
                             color="textSecondary"
                             component="p"
                           >
-                            El evento ideal para tu "{evento.ocasion}". ¡Ven y
-                            disfruta de nuestro servicio, vamos hasta tu{" "}
-                            {evento.ocasion} vamos hasta tu {evento.mobiliario}!
+                            El evento ideal para tu "{evento.ocasion}". ¡Estamos listos para brindarte la mejor experiencia en tu evento!
                             <br />
                             <br />
                           </Typography>
@@ -207,7 +205,7 @@ const Pago = () => {
                                 </p>
                                 <p>
                                   <span className="recibo-label">
-                                    Hora del Evento:
+                                    Hora del evento:
                                   </span>{" "}
                                   {separacion.horaEvento}
                                 </p>
@@ -229,6 +227,11 @@ const Pago = () => {
                                   <span className="recibo-label">Colonia:</span>{" "}
                                   {separacion.colonia}
                                 </p>
+                                <p>
+                                  <span className="recibo-label">Codigo postal:</span>{" "}
+                                  {separacion.cp}
+                                </p>
+                                <br /><br />
                               </div>
                             </div>
                           </Typography>

@@ -52,7 +52,7 @@ const Ineventos = () => {
       <h1 className={styles.titulo}>¡Decoramos tu evento!</h1>
       <p>¿La festividades te abruman?
       ¡No te preocupes, nosotros te ayudamos!
-      Da clic en el botón y elíge tu paquete para tu evento de ensueño.</p>
+      Da clic en el botón y elige tu paquete para tu evento de ensueño.</p>
 
       <div className={styles.ctaContainer2}>
       <NavLink to="/Eventos"

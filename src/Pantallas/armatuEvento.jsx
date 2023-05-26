@@ -70,9 +70,9 @@ const ArmatuEvento = () => {
       } else {
         alert("Evento creado con éxito");
         console.log(res.data.data);
-        // navigate("/Eventos/Separacion", {
-        //     state: { evento: res.data.data },
-        //   })
+        navigate("/Eventos/Separacion", {
+            state: { evento: res.data.data },
+          })
       }
     });
   };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link,useNavigate } from 'react-router-dom';
 import { formatCurrency } from './../Hooks/currencyUtils';
-import c1 from "../img/CursoGuadalajara.jpg";
+import c1 from "../img/eventos2.png";
 
 
 const ButtonsE =({paquete})=>{

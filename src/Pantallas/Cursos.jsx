@@ -28,7 +28,7 @@ const Cursos = () => {
       <div id={styles.principal}>
 
         <h2 className={styles.subtitulo}>Curso de globos, flores y follajes</h2>
-        <p>Nuestro curso de globos florales abarcan técnicas avanzadas para la construcción de figuras con globos, ideas creativas para decoraciones con globos, configuraciones básicas y avanzadas para arreglos florales con globos, guías paso a paso sobre cómo crear diferentes diseños y mucho más. Además, los alumnos recibirán asistencia personalizada por parte de nuestros instructores para ayudarlos a resolver cualquier duda o problema que puedan encontrar durante el curso. </p>
+        <p className={styles.texto1}>Nuestro curso de globos florales abarcan técnicas avanzadas para la construcción de figuras con globos, ideas creativas para decoraciones con globos, configuraciones básicas y avanzadas para arreglos florales con globos, guías paso a paso sobre cómo crear diferentes diseños y mucho más. Además, los alumnos recibirán asistencia personalizada por parte de nuestros instructores para ayudarlos a resolver cualquier duda o problema que puedan encontrar durante el curso. </p>
         <img src={c1} alt="" className={styles.imagen} />
         <img src={c2} alt="" className={styles.imagen} />
         <img src={c3} alt="" className={styles.imagen} />

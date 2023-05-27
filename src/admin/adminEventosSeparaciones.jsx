@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./../Pantallas/Inicio.module.css";
 import { reqqResapi } from "../api/reqRes";
-import EventosSeparacionesRow from '../componentes/eventosSeparacionesRow';
+import EventosSeparacionesRow from '../Componentes/eventosSeparacionesRow';
 
 const adminEventosSeparaciones = () => {
   const [isUpdate, setisUpdate] = useState(false);

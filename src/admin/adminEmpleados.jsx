@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./../Pantallas/Inicio.module.css";
 import { NavLink } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
-import EmpleadosRow from '../componentes/empleadosRow';
+import EmpleadosRow from '../Componentes/empleadosRow';
 
 const adminEmpleados = () => {
   const [isUpdate, setisUpdate] = useState(false);

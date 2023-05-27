@@ -15,7 +15,7 @@ const EventosRow = ({evento,rol}) => {
             if (res.data.error) {
             alert(res.data.message);
             } else {
-            alert(res.data.message);
+              alert("Evento eliminado con éxito");
             // se actualiza la tabla
             window.location.reload();
             }

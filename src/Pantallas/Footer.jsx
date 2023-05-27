@@ -16,7 +16,7 @@ function Footer() {
           <img src={logo} className='mx-2' width='200'/>
         </Link>
         <ul className="col-12 col-md-12 list-unstyled">
-            <li className="font-weight-bold mb-2 text-center">Sitio Web oficial de WujuBalloons</li>
+            <li className="font-weight-bold mb-2 text-center">Sitio web oficial de WujuBalloons</li>
             <li className="text-center">Contáctanos: +52 8131410362</li>
             <li className="text-center">Correo electrónico: wujuballoons@gmail.com</li>
         </ul>

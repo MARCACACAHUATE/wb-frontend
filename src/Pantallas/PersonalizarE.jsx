@@ -71,41 +71,90 @@ const ListaPer = () => {
             <div className="col-md-8">
               <div className="contact-form">
               <div className="form-group form-cont form-cont">
-                  <label className="control-label col-sm-6 label" for="fname">Primer Nombre:</label>
+                  <label className="control-label col-sm-6 label" for="fname">Primer nombre:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre" name="fname" {...register("FirstName")}  required/>
+                  <input type="text" className="form-control" id="fname" placeholder="Ingresa el nombre" name="fname" {...register("FirstName")}  required maxlength="100"/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="lname">Primer Apellido:</label>
+                  <label className="control-label col-sm-6 label" for="lname">Primer apellido:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el apellido" name="lname" {...register("LastName")}  required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el apellido" name="lname" {...register("LastName")}  required maxlength="100"/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="email">Email:</label>
                   <div className="col-sm-10">
-                  <input type="email" className="form-control" id="email" placeholder="ejemplo@dominio.com" name="email" {...register("email")}  required/>
+                  <input type="email" className="form-control" id="email" placeholder="ejemplo@dominio.com" name="email" {...register("email", {
+                    required: true,
+                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ // Expresión regular para validar el formato del correo
+                  })} 
+                  onBlur={(e) => {
+                    if (!e.target.validity.valid) {
+                      alert("Por favor, introduce un correo válido.");
+                    }
+                  }}
+                  required maxlength="100"/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Teléfono:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el telefono" name="lname" {...register("telefono")}  required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el teléfono" name="lname" {...register("telefono" , {
+                    required: true,
+                    pattern: /^[0-9]{10}$/  // Expresión regular para validar 10 dígitos numéricos
+                  })}
+                  onBlur={(e) => {
+                    if (e.target.value.length !== 10) {
+                      alert("El número de teléfono debe tener 10 dígitos.");
+                    }
+                  }}  required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="comment">Hora del evento:</label>
                   <div className="col-sm-10">
-                  <input type="time" className="form-control" id="lname" placeholder="Ingresa la hora del evento" name="lname" pattern="[0-9]{2}:[0-9]{2}" {...register("horaEvento")} required/>
+                  <input
+                    type="time"
+                    className="form-control"
+                    id="lname"
+                    placeholder="Ingresa la hora del evento"
+                    name="lname"
+                    pattern="[0-9]{2}:[0-9]{2}" // Expresión regular para validar el formato de la hora
+                    {...register("horaEvento", {
+                      required: true,
+                      pattern: /[0-9]{2}:[0-9]{2}/ // Expresión regular para validar el formato de la hora
+                    })}
+                    required
+                  />
+                  {/* <input type="time" className="form-control" id="lname" placeholder="Ingresa la hora del evento" name="lname" pattern="[0-9]{2}:[0-9]{2}" {...register("horaEvento") } required/> */}
                   <input type="hidden" className="form-control" id="lname2" placeholder="Ingresa la hora del evento" name="lname2" pattern="[0-9]{2}:[0-9]{2}" {...register("HoraMontaje")} defaultValue={"01:00"} required/>
                   <input type="hidden" className="form-control" id="lname2" placeholder="Ingresa la hora del evento" name="lname2" {...register("id_Evento")} defaultValue={evento.id} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Fecha Evento:</label>
+                  <label className="control-label col-sm-6 label" for="comment">Fecha evento:</label>
                   <div className="col-sm-10">
-                  <input type="date" className="form-control" id="lname" placeholder="Ingresa la fecha del evento" name="lname" {...register("fecha")} required/>
+                  {/* <input type="date" className="form-control" id="lname" placeholder="Ingresa la fecha del evento" name="lname" {...register("fecha")} required/> */}
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="lname"
+                    placeholder="Ingresa la fecha del evento"
+                    name="lname"
+                    pattern="\d{4}-\d{2}-\d{2}" // Expresión regular para validar el formato de la fecha (AAAA-MM-DD)
+                    {...register("fecha", {
+                      required: true,
+                      pattern: /\d{4}-\d{2}-\d{2}/ // Expresión regular para validar el formato de la fecha (AAAA-MM-DD)
+                    })}
+                    required
+                    onBlur={(e) => {
+                      const inputDate = new Date(e.target.value);
+                      if (isNaN(inputDate) || inputDate.toISOString().slice(0, 10) !== e.target.value) {
+                        alert("Por favor, introduce una fecha válida.");
+                      }
+                    }}
+                  />
                   </div>
                 </div>
                 <div className="form-group form-cont">
@@ -115,9 +164,9 @@ const ListaPer = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="comment">Numero:</label>
+                  <label className="control-label col-sm-6 label" for="comment">Número:</label>
                   <div className="col-sm-10">
-                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el numero del local" name="lname" {...register("numero")} required/>
+                  <input type="text" className="form-control" id="lname" placeholder="Ingresa el número del local" name="lname" {...register("numero")} required/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
@@ -126,11 +175,34 @@ const ListaPer = () => {
                   <input type="text" className="form-control" id="lname" placeholder="Ingresa la colonia" name="lname" {...register("colonia")} required/>
                   </div>
                 </div>
+                <div className="form-group form-cont">
+                  <label className="control-label col-sm-6 label" for="comment">Código postal:</label>
+                  <div className="col-sm-10">
+                  {/* <input type="number" className="form-control" id="lname" placeholder="Ingresa la colonia" name="lname" {...register("cp")} required/> */}
+                  <input
+                      type="number"
+                      className="form-control"
+                      id="lname"
+                      placeholder="Ingresa el código postal"
+                      name="lname"
+                      {...register("cp", {
+                        required: true,
+                        pattern: /^[0-9]{5}$/ // Expresión regular para validar un código postal de 5 dígitos
+                      })}
+                      required
+                      onBlur={(e) => {
+                        if (e.target.value.length !== 5) {
+                          alert("Por favor, introduce un código postal válido de 5 dígitos.");
+                        }
+                      }}
+                    />
+                    </div>
+                </div>
                 <br />
                 <div className="form-group form-cont">        
                   <div className="col-sm-offset-8 col-sm-12">
                   <button type="submit" className="btn btn-default" >
-                    Proceder al Pago
+                    Proceder al pago
                   </button>
                   </div>
                 </div>
@@ -151,8 +223,8 @@ const ListaPer = () => {
                           {evento.nombrePaquete}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                          El evento ideal para tu "{evento.ocasion}".
-                          ¡Ven y disfruta de nuestro servicio, vamos hasta tu {evento.ocasion} vamos hasta tu {evento.ocasion}!<br /><br />
+                          El evento ideal para tu "{evento.ocasion}". ¡Estamos listos para brindarte la mejor experiencia en tu evento!
+                         <br /><br />
                          
                           Costo de envío: <strong>{formatCurrency(evento.costoEnvioMaterial)}</strong><br />
                           Costo de reservación: <strong>{formatCurrency(evento.costo_reservacion)}</strong><br />

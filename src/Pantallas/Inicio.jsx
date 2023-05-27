@@ -5,8 +5,8 @@ import Ineventos from "./Ineventos";
 const Inicio = () => {
   return (
     <>
-    <Incursos />
     <Ineventos />
+    <Incursos />
     </>
   )
 }

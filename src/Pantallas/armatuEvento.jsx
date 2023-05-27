@@ -68,7 +68,7 @@ const ArmatuEvento = () => {
       if (res.data.error) {
         alert(res.data.message);
       } else {
-        alert(res.data.message);
+        alert("Evento creado con éxito");
         console.log(res.data.data);
         navigate("/Eventos/Separacion", {
             state: { evento: res.data.data },
@@ -114,7 +114,7 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                 <div className="form-group form-cont form-cont">
                   <label className="control-label col-sm-6 label" for="nombrePaquete">Nombre del paquete:</label>
                   <div className="col-sm-10">          
-                  <input type="text" className="form-control" id="nombrePaquete" placeholder="Ingresa el nombre del paquete" name="nombrePaquete" {...register("nombrePaquete")} required/>
+                  <input type="text" className="form-control" id="nombrePaquete" placeholder="Ingresa el nombre del paquete" name="nombrePaquete" {...register("nombrePaquete")} required maxlength="100"/>
                   </div>
                 </div>
                 <div className="form-group form-cont">
@@ -132,8 +132,14 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                   <div className="col-sm-10">
                   <select className='form-control' {...register("servicios")}>
                     <option value="Mesa de postres">Mesa de postres</option>
-                    <option value="Renta de mobiliario">Renta de mobiliario</option>
                     <option value="Pisos de madera">Pisos de madera</option>
+                    <option value="Centros de mesa">Centros de mesa</option>
+                    <option value="Iluminación decorativa">Iluminación decorativa</option>
+                    <option value="Globos decorativos">Globos decorativos</option>
+                    <option value="Cortinas y telas">Cortinas y telas</option>
+                    <option value="Photobooth">Photobooth</option>
+                    <option value="Piñatas">Piñatas</option>
+                    <option value="Invitaciones personalizadas">Invitaciones personalizadas</option>
                   </select>
                   </div>
                 </div>
@@ -141,19 +147,27 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                   <label className="control-label col-sm-6 label" for="mobiliario">Mobiliario:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("mobiliario")}>
-                    <option value="Mesas y sillas paquete chicho (20 personas)">Mesas y sillas paquete chicho (20 personas)</option>
+                    <option value="Mesas y sillas paquete chicho (20 personas)">Mesas y sillas paquete chico (20 personas)</option>
                     <option value="Mesas y sillas paquete mediano (50 personas)">Mesas y sillas paquete mediano (50 personas)</option>
                     <option value="Mesas y sillas paquete grande (100 personas)">Mesas y sillas paquete grande (100 personas)</option>
                   </select>
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de Globos:</label>
+                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de globos:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("colorGlobos")}>
-                    <option value="Azul" selected={evento.colorGlobos=="Azul"}>Azul</option>
-                    <option value="Rojo" selected={evento.colorGlobos=="Rojo"}>Rojo</option>
-                    <option value="Verde" selected={evento.colorGlobos=="Verde"}>Verde</option>
+                  <option value="Azul" selected={evento.colorGlobos === "Azul"}>Azul</option>
+                  <option value="Blanco" selected={evento.colorGlobos === "Blanco"}>Blanco</option>
+                  <option value="Celeste" selected={evento.colorGlobos === "Celeste"}>Celeste</option>
+                  <option value="Guindo" selected={evento.colorGlobos === "Guindo"}>Guindo</option>
+                  <option value="Naranja" selected={evento.colorGlobos === "Naranja"}>Naranja</option>
+                  <option value="Negro" selected={evento.colorGlobos === "Negro"}>Negro</option>
+                  <option value="Rojo" selected={evento.colorGlobos === "Rojo"}>Rojo</option>
+                  <option value="Rosa" selected={evento.colorGlobos === "Rosa"}>Rosa</option>
+                  <option value="Verde" selected={evento.colorGlobos === "Verde"}>Verde</option>
+                  <option value="Violeta" selected={evento.colorGlobos === "Violeta"}>Violeta</option>
+
                   </select>
                   </div>
                 </div>
@@ -165,8 +179,16 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                   <label className="control-label col-sm-6 label" for="comment">Municipio:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("id_Municipio")}>
-                    <option value="1" selected={evento.id_Municipio=="1"}>Monterrey</option>
-                    <option value="2" selected={evento.id_Municipio=="2"}>San Nicolás</option>
+                    <option value="1" selected={evento.id_Municipio === "1"}>Monterrey</option>
+                    <option value="2" selected={evento.id_Municipio === "2"}>San Nicolás</option>
+                    <option value="3" selected={evento.id_Municipio === "3"}>San Pedro</option>
+                    <option value="4" selected={evento.id_Municipio === "4"}>Guadalupe</option>
+                    <option value="5" selected={evento.id_Municipio === "5"}>Apodaca</option>
+                    <option value="6" selected={evento.id_Municipio === "6"}>Escobedo</option>
+                    <option value="7" selected={evento.id_Municipio === "7"}>Santa Catarina</option>
+                    <option value="8" selected={evento.id_Municipio === "8"}>Juárez</option>
+                    <option value="9" selected={evento.id_Municipio === "9"}>García</option>
+                    <option value="10" selected={evento.id_Municipio === "10"}>Ciénega de Flores</option>
                   </select>
                   </div>
                 </div>
@@ -204,7 +226,7 @@ Comienza seleccionando el tipo de evento que deseas personalizar: ya sea una bod
                 <div className="form-group form-cont">        
                   <div className="col-sm-offset-10 col-sm-16">
                   <button type="submit" className="btn btn-default">
-                    Crear Evento
+                    Crear evento
                   </button>
                   </div>
                 </div>

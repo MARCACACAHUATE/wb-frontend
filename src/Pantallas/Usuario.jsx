@@ -61,7 +61,15 @@ const Usuario = () => {
               </div> */}
             
             <label htmlFor="email">Email</label>
-            <input type="email" name='email' placeholder='Ingresa tu email' id='email' {...register("email")} required/>
+            <input type="email" name='email' placeholder='Ingresa tu email' id='email' {...register("email", {
+                    required: true,
+                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ // Expresión regular para validar el formato del correo
+                  })} 
+                  onBlur={(e) => {
+                    if (!e.target.validity.valid) {
+                      alert("Por favor, introduce un correo válido.");
+                    }
+                  }} required/>
 
             <label htmlFor="contraseña">Contraseña</label>
             <input type="password" name="password" placeholder='Ingresa tu contraseña' id="password" {...register("password")} required/>

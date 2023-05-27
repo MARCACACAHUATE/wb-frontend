@@ -44,7 +44,7 @@ const adminFormCursos = () => {
       } else {
         console.log(res.data.data);
         saveIMG(res.data.data.id,Jsonsend);
-        alert(res.data.message);
+        alert("Evento creado con éxito");
       }
     });
   };
@@ -94,8 +94,8 @@ const adminFormCursos = () => {
                 <img src={logo} alt="Logo"/>
                 <h2>
                 {state!=undefined
-                ? "Modificar Evento: " + evento.nombrePaquete
-                : "Agregar Evento"}
+                ? "Modificar evento: " + evento.nombrePaquete
+                : "Agregar evento"}
                 </h2>
               </div>
             </div>
@@ -108,7 +108,7 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont form-cont">
-                  <label className="control-label col-sm-6 label" for="image">Portada del paquiete:</label>
+                  <label className="control-label col-sm-6 label" for="image">Portada del paquete:</label>
                   <div className="col-sm-10">          
                   <input type="file" className="form-control" id="image" placeholder="Sube la imagen del paquete" name="nombrePaquete" {...register("image")} disabled={sessionStorage.getItem('role')!="Admin"} required/>
                   </div>
@@ -133,25 +133,67 @@ const adminFormCursos = () => {
                   </div>
                 </div>
                 <div className="form-group form-cont">
-                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de Globos:</label>
+                  <label className="control-label col-sm-6 label" for="colorGlobos">Color de globos:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("colorGlobos")} disabled={sessionStorage.getItem('role')!="Admin"}>
-                    <option value="Azul" selected={evento.colorGlobos=="Azul"}>Azul</option>
-                    <option value="Rojo" selected={evento.colorGlobos=="Rojo"}>Rojo</option>
-                    <option value="Verde" selected={evento.colorGlobos=="Verde"}>Verde</option>
+                    <option value="Azul" selected={evento.colorGlobos === "Azul"}>Azul</option>
+                    <option value="Blanco" selected={evento.colorGlobos === "Blanco"}>Blanco</option>
+                    <option value="Celeste" selected={evento.colorGlobos === "Celeste"}>Celeste</option>
+                    <option value="Guindo" selected={evento.colorGlobos === "Guindo"}>Guindo</option>
+                    <option value="Naranja" selected={evento.colorGlobos === "Naranja"}>Naranja</option>
+                    <option value="Negro" selected={evento.colorGlobos === "Negro"}>Negro</option>
+                    <option value="Rojo" selected={evento.colorGlobos === "Rojo"}>Rojo</option>
+                    <option value="Rosa" selected={evento.colorGlobos === "Rosa"}>Rosa</option>
+                    <option value="Verde" selected={evento.colorGlobos === "Verde"}>Verde</option>
+                    <option value="Violeta" selected={evento.colorGlobos === "Violeta"}>Violeta</option>
                   </select>
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="costoEnvioMaterial">Costo de envío:</label>
                   <div className="col-sm-10">
-                  <input type="number" className="form-control" id="costoEnvioMaterial" placeholder="Ingresa el costo de envío" name="costoEnvioMaterial" {...register("costoEnvioMaterial")} defaultValue={evento.costoEnvioMaterial} disabled={sessionStorage.getItem('role')!="Admin"} required/>
+                  {/* <input type="number" className="form-control" id="costoEnvioMaterial" placeholder="Ingresa el costo de envío" name="costoEnvioMaterial" {...register("costoEnvioMaterial")} defaultValue={evento.costoEnvioMaterial} disabled={sessionStorage.getItem('role')!="Admin"} required/> */}
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="costoEnvioMaterial"
+                    placeholder="Ingresa el costo de envío"
+                    name="costoEnvioMaterial"
+                    {...register("costoEnvioMaterial")}
+                    defaultValue={evento.costoEnvioMaterial}
+                    disabled={sessionStorage.getItem('role') !== "Admin"}
+                    required
+                    onBlur={(e) => {
+                      const costoEnvio = e.target.value;
+                      if (costoEnvio < 0) {
+                        alert("El costo de envío no puede ser negativo.");
+                      }
+                    }}
+                  />
                   </div>
                 </div>
                 <div className="form-group form-cont">
                   <label className="control-label col-sm-6 label" for="costo_reservacion">Costo de reservación:</label>
                   <div className="col-sm-10">
-                  <input type="number" className="form-control" id="costo_reservacion" placeholder="Ingresa el costo de reservacion" name="costo_reservacion" {...register("costo_reservacion")} defaultValue={evento.costo_reservacion} disabled={sessionStorage.getItem('role')!="Admin"} required/>
+                  {/* <input type="number" className="form-control" id="costo_reservacion" placeholder="Ingresa el costo de reservacion" name="costo_reservacion" {...register("costo_reservacion")} defaultValue={evento.costo_reservacion} disabled={sessionStorage.getItem('role')!="Admin"} required/> */}
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="costo_reservacion"
+                    placeholder="Ingresa el costo de reservación"
+                    name="costo_reservacion"
+                    {...register("costo_reservacion")}
+                    defaultValue={evento.costo_reservacion}
+                    disabled={sessionStorage.getItem('role') !== "Admin"}
+                    required
+                    onBlur={(e) => {
+                      const costoReservacion = e.target.value;
+                      if (costoReservacion < 0) {
+                        alert("El costo de reservación no puede ser negativo.");
+                      }
+                    }}
+                  />
+
                   </div>
                 </div>
                 <div className="form-group form-cont">
@@ -168,8 +210,16 @@ const adminFormCursos = () => {
                   <label className="control-label col-sm-6 label" for="comment">Municipio:</label>
                   <div className="col-sm-10">
                   <select className='form-control' {...register("id_Municipio")} disabled={sessionStorage.getItem('role')!="Admin"}>
-                    <option value="1" selected={evento.id_Municipio=="1"}>Monterrey</option>
-                    <option value="2" selected={evento.id_Municipio=="2"}>San Nicolás</option>
+                    <option value="1" selected={evento.id_Municipio === "1"}>Monterrey</option>
+                    <option value="2" selected={evento.id_Municipio === "2"}>San Nicolás</option>
+                    <option value="3" selected={evento.id_Municipio === "3"}>San Pedro</option>
+                    <option value="4" selected={evento.id_Municipio === "4"}>Guadalupe</option>
+                    <option value="5" selected={evento.id_Municipio === "5"}>Apodaca</option>
+                    <option value="6" selected={evento.id_Municipio === "6"}>Escobedo</option>
+                    <option value="7" selected={evento.id_Municipio === "7"}>Santa Catarina</option>
+                    <option value="8" selected={evento.id_Municipio === "8"}>Juárez</option>
+                    <option value="9" selected={evento.id_Municipio === "9"}>García</option>
+                    <option value="10" selected={evento.id_Municipio === "10"}>Ciénega de Flores</option>
                   </select>
                   </div>
                 </div>
@@ -178,8 +228,8 @@ const adminFormCursos = () => {
                   <div className="col-sm-offset-2 col-sm-10">
                   <button type="submit" className="btn btn-default" disabled={sessionStorage.getItem('role')!="Admin"}>
                     {state!=undefined
-                      ? "Modificar Evento"
-                      : "Crear Evento"
+                      ? "Modificar evento"
+                      : "Crear evento"
                     }
                   </button>
                   </div>

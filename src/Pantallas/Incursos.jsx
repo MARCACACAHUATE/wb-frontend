@@ -19,9 +19,9 @@ const Incursos = () => {
       <img src="" alt="" />
 
       <div className={styles.ctaContainer}>
-      <NavLink to="/Cursos"
+      <NavLink to="https://www.instagram.com/wujuballoons/"
                     smooth
-                    duration={500} className={styles.callToAction}>Comenzar a aprender</NavLink>&nbsp;
+                    duration={500} className={styles.callToAction}>Contáctanos</NavLink>&nbsp;
       </div>
       </div>
 

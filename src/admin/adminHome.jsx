@@ -82,8 +82,7 @@ const adminHome = () => {
                     {evento.nombrePaquete}
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    El evento ideal para tu "{evento.ocasion}".
-                    ¡Ven y disfruta de nuestro servicio, vamos hasta tu {evento.ocasion} vamos hasta tu {evento.ocasion}!<br /><br />
+                    El evento ideal para tu "{evento.ocasion}". ¡Estamos listos para brindarte la mejor experiencia en tu evento!<br /><br />
                     Costo de envío: <strong>{formatCurrency(evento.costoEnvioMaterial)}</strong><br />
                     Costo de reservación: <strong>{formatCurrency(evento.costo_reservacion)}</strong><br />
                     Costo total: <strong>{formatCurrency(evento.costo_total)}</strong><br />
@@ -96,7 +95,7 @@ const adminHome = () => {
                   className={styles.callToAction}
                   onClick={()=>modifyEvento(evento)}
                 >
-                  Ver Evento
+                  Ver evento
                 </div>
               </CardActions>
             </Card>

@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 const Ineventos = () => {
   return (
     <div className={styles.inicio}>
+      <br /><br /><br />
       <div id={styles.contgeneral}>
       <div id={styles.cont1}>
       <div id={styles.cuarto}>

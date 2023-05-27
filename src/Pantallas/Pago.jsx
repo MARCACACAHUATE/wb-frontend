@@ -20,6 +20,9 @@ const useStyles = makeStyles({
   root: {
     width: 645,
   },
+  root2: {
+    width: 460
+  },
 });
 
 const Pago = () => {
@@ -32,6 +35,7 @@ const Pago = () => {
   const [success, setSuccess] = useState(false);
   const [ErrorMessage, setErrorMessage] = useState("");
   const [orderID, setOrderID] = useState(false);
+  const [IDseparacion, setIDseparacion] = useState(false);
 
   let evento = {};
   let separacion = {};
@@ -109,10 +113,12 @@ const Pago = () => {
     //llamado al api promesa y se le asigna la interfaz
     const resp = await reqqResapi.post("api/eventosseparacions/",separacion).then((res) => {
       if (res.data.error) {
-        alert(res.data.message);
+        alert(res.data);
       } else {
-        alert(res.data.message);
-        navigate("/Eventos");
+        console.log(res.data);
+        setIDseparacion(res.data.data.id)
+        // window.print();
+        // navigate("/Eventos");
       }
     });
   };
@@ -129,7 +135,6 @@ const Pago = () => {
       User >
       ("", Jsonsend).then((res) => {
         if (res.data.message) {
-          alert(res.data.message);
         }
       });
   };
@@ -162,6 +167,12 @@ const Pago = () => {
                       <div className="row">
                         <div className="col">
                           <Typography gutterBottom variant="h5" component="h2">
+                            {orderID && (
+                              <p><strong>OrderID paypal:</strong> {orderID}</p>
+                            )}
+                            {IDseparacion && (
+                              <p><strong>ID separacion:</strong> {IDseparacion}</p>
+                            )}
                             Paquete: {evento.nombrePaquete}
                           </Typography>
                           <Typography
@@ -228,7 +239,7 @@ const Pago = () => {
                                   {separacion.colonia}
                                 </p>
                                 <p>
-                                  <span className="recibo-label">Codigo postal:</span>{" "}
+                                  <span className="recibo-label">Código postal:</span>{" "}
                                   {separacion.cp}
                                 </p>
                                 <br /><br />
@@ -271,13 +282,26 @@ const Pago = () => {
                         </strong>
                       </div>
                     </div>
-                    <PayPalScriptProvider options={initialOptions}>
+                    {IDseparacion? 
+                    (
+                      <div
+                  className={styles.callToAction}
+                  onClick={()=>modifyEvento(evento)}
+                >
+                  <stron>Regresar</stron>
+                </div>
+                    ):
+                    (<PayPalScriptProvider options={initialOptions}>
                       <PayPalButtons
                         style={{ layout: "horizontal" }}
                         createOrder={createOrder}
                         onApprove={onApprove}
                       />
-                    </PayPalScriptProvider>
+                    </PayPalScriptProvider>)
+                  }
+                      
+                    
+                    
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -288,10 +312,11 @@ const Pago = () => {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Compra realiza con exito</Modal.Title>
+          <Modal.Title>Compra realiza con éxito</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p><strong>orderID del pedido:</strong> {orderID}</p>
+          <p><strong>OrderID paypal:</strong> {orderID}</p>
+          <p><strong>ID separacion:</strong> {IDseparacion}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>

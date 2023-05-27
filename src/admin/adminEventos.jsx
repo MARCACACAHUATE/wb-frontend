@@ -113,7 +113,7 @@ const adminEventos = () => {
                         <th scope="col" className="admincol">Estado</th>
                         <th scope="col" className="admincol">Municipio</th>
                         <th scope="col" className="admincol">Envío</th>
-                        <th scope="col" className="admincol">Reservación</th>
+                        <th scope="col" className="admincol">Costo de Evento</th>
                         <th scope="col" className="admincol">Total</th>
                         <th scope="col" className="admincol">Separación</th>
                       </tr>

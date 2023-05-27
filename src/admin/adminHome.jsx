@@ -12,7 +12,7 @@ import { NavLink,useNavigate } from "react-router-dom";
 import { reqqResapi } from "../api/reqRes";
 import { formatCurrency } from './../Hooks/currencyUtils';
 
-import c1 from "../img/CursoGuadalajara.jpg";
+import c1 from "../img/eventos.png";
 import c2 from "../img/CursoSanLuis.jpg";
 import c3 from "../img/CursoTampico.jpg";
 
